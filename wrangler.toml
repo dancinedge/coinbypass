@@ -1,0 +1,6 @@
+# Cloudflare Pages config for the standalone coinbypass site.
+# Static build output is `out/` (next.config.js → output: "export").
+
+name = "dancinedge-coinbypass"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "out"
