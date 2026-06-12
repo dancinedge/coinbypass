@@ -23,14 +23,35 @@ export function Head({
   jsonLd,
   siteId = "solutionz",
 }: HeadProps) {
-  // 기본 JSON-LD (WebSite 스키마)
-  const defaultJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteName || title,
-    url: canonical,
-    description: description,
-  };
+  // 기본 JSON-LD. coinbypass 는 "코인장" 별칭(alternateName) + Organization 을 함께 노출해
+  // "코인장" 검색 시 브랜드(코인바이패스)와 연결되도록 한다(SEO).
+  const defaultJsonLd =
+    siteId === "coinbypass"
+      ? {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              name: siteName || title,
+              alternateName: ["코인장", "코인 충전소"],
+              url: canonical,
+              description: description,
+            },
+            {
+              "@type": "Organization",
+              name: siteName || "코인바이패스",
+              alternateName: "코인장",
+              url: canonical,
+            },
+          ],
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteName || title,
+          url: canonical,
+          description: description,
+        };
 
   const structuredData = jsonLd || defaultJsonLd;
   
