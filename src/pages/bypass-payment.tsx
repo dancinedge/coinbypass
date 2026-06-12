@@ -9,9 +9,9 @@ export default function BypassPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="결제 우회 / 대체 결제 가이드 2025 - 코인으로 우회 결제 | 코인바이패스"
-        description="카드·계좌 결제가 막혔을 때 코인(USDT)으로 우회하는 방법. 결제 우회가 필요한 상황, 대체 결제 수단 비교, 안전 수칙을 정리했습니다."
-        keywords="결제우회, 우회결제, 대체결제, 코인 우회결제, USDT 우회, 결제 막힘, 해외결제 우회, 가상자산 결제"
+        title="코인장 결제 우회 / 대체 결제 가이드 2025 - 코인으로 우회 결제 | 코인바이패스"
+        description="카드·계좌 결제가 막혔을 때 코인장에서 코인(USDT)으로 우회하는 방법. 결제 우회가 필요한 상황, 대체 결제 수단 비교, 코인장 이용 안전 수칙을 정리했습니다."
+        keywords="코인장, 결제우회, 우회결제, 대체결제, 코인 우회결제, USDT 우회, 결제 막힘, 해외결제 우회"
         canonical={`${site.domain}/bypass-payment`}
       />
       <CoinBypassLayout currentPath="/bypass-payment">

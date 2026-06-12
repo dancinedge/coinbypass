@@ -9,9 +9,9 @@ export default function CoinPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="코인 결제 방법 2025 - USDT로 결제하는 법 | 코인바이패스"
-        description="USDT 코인 결제 완벽 가이드. 지갑 주소·QR 입력부터 네트워크 선택, 결제 확인까지. 코인으로 안전하게 결제하는 실전 방법을 정리했습니다."
-        keywords="코인결제, USDT결제, 코인 결제 방법, 가상자산 결제, 테더 결제, 코인 결제하는법, 지갑 주소 결제"
+        title="코인장 코인 결제 방법 2025 - USDT로 결제하는 법 | 코인바이패스"
+        description="코인장(코인 충전소) USDT 코인 결제 완벽 가이드. 코인장에서 충전한 USDT로 지갑 주소·QR 입력부터 네트워크 선택, 결제 확인까지 안전하게 결제하는 실전 방법을 정리했습니다."
+        keywords="코인장, 코인결제, USDT결제, 코인 결제 방법, 코인 충전소, 가상자산 결제, 테더 결제, 코인 결제하는법"
         canonical={`${site.domain}/coin-payment`}
       />
       <CoinBypassLayout currentPath="/coin-payment">
@@ -26,7 +26,7 @@ export default function CoinPaymentPage() {
                 <span className="text-coinbypass-primary">코인 결제</span> 방법
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                충전한 USDT로 결제하는 것은 생각보다 간단합니다. 가맹점이 안내한 지갑 주소로
+                코인장에서 충전한 USDT로 결제하는 것은 생각보다 간단합니다. 가맹점이 안내한 지갑 주소로
                 정해진 수량을 보내면 결제가 완료됩니다. 핵심은 네트워크와 주소 확인입니다.
               </p>
             </div>
