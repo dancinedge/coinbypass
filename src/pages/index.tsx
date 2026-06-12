@@ -32,7 +32,7 @@ export default function CoinBypassHome() {
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  결제 제한 없는
+                  코인장 — 결제 제한 없는
                 </span>
                 <br />
                 <span className="text-white">USDT 코인 결제</span>
