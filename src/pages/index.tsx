@@ -200,6 +200,47 @@ export default function CoinBypassHome() {
           </div>
         </section>
 
+        {/* 업체(파트너) — 코인장 충전소 창업/임대 (B2B 듀얼 랜딩) */}
+        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
+                🏪 코인장 파트너 — 충전소 창업
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-coinbypass-primary">코인장</span> 충전소를 직접 운영하세요
+              </h2>
+              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
+                나만의 USDT 충전소를 코인장에서 임대받아 시작하세요. 인프라·결제·정산을 코인장이 제공합니다.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "⚡", title: "즉시 발급", desc: "신청 즉시 충전소 오픈 — 개발·서버 준비 불필요" },
+                { icon: "🌐", title: "전용 도메인", desc: "내 브랜드 도메인을 연결해 독립 운영" },
+                { icon: "📊", title: "자동 정산", desc: "거래·수수료 자동 집계 + 실시간 정산" },
+                { icon: "💬", title: "텔레그램 연동", desc: "상담·충전 알림 봇 자동 연결" },
+              ].map((c) => (
+                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <h3 className="font-bold mb-2">{c.title}</h3>
+                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href={site.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
+              >
+                코인장 가맹 문의 →
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Notice */}
         <section className="py-12 bg-yellow-500/10 border-y border-yellow-500/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
