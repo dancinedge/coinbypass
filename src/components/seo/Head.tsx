@@ -54,7 +54,28 @@ export function Head({
         };
 
   const structuredData = jsonLd || defaultJsonLd;
-  
+
+  // hreflang ko↔en alternate (coinbypass 다국어). canonical(full URL) 기반 상대 언어 URL 생성.
+  let hreflangs: { lang: string; href: string }[] = [];
+  if (siteId === "coinbypass") {
+    try {
+      const u = new URL(canonical);
+      const p = u.pathname.replace(/\/$/, "");
+      const isEnC = p === "/en" || p.startsWith("/en/");
+      const koPath = isEnC ? p.replace(/^\/en/, "") || "/" : p || "/";
+      const enPath = isEnC ? p : koPath === "/" ? "/en" : `/en${koPath}`;
+      const koUrl = `${u.origin}${koPath}`;
+      const enUrl = `${u.origin}${enPath}`;
+      hreflangs = [
+        { lang: "ko", href: koUrl },
+        { lang: "en", href: enUrl },
+        { lang: "x-default", href: koUrl },
+      ];
+    } catch {
+      hreflangs = [];
+    }
+  }
+
   // 사이트별 파비콘 및 OG 이미지 경로
   const faviconPath = `/${siteId}/favicon.svg`;
   const defaultOgImage = `/${siteId}/og-image.png`;
@@ -67,6 +88,9 @@ export function Head({
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="canonical" href={canonical} />
+      {hreflangs.map((h) => (
+        <link key={h.lang} rel="alternate" hrefLang={h.lang} href={h.href} />
+      ))}
 
       {/* Robots */}
       <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
