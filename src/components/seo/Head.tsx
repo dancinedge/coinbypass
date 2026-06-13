@@ -60,16 +60,23 @@ export function Head({
   if (siteId === "coinbypass") {
     try {
       const u = new URL(canonical);
-      const p = u.pathname.replace(/\/$/, "");
-      const isEnC = p === "/en" || p.startsWith("/en/");
-      const koPath = isEnC ? p.replace(/^\/en/, "") || "/" : p || "/";
-      const enPath = isEnC ? p : koPath === "/" ? "/en" : `/en${koPath}`;
-      const koUrl = `${u.origin}${koPath}`;
-      const enUrl = `${u.origin}${enPath}`;
+      const p = u.pathname.replace(/\/$/, "") || "/";
+      // 현재 경로에서 locale prefix 제거 → base path (ko 기준 경로)
+      let base = p;
+      for (const pre of ["/en", "/ja", "/zh"]) {
+        if (p === pre || p.startsWith(`${pre}/`)) {
+          base = p.slice(pre.length) || "/";
+          break;
+        }
+      }
+      const langUrl = (pre: string) =>
+        `${u.origin}${!pre ? (base === "/" ? "/" : base) : base === "/" ? pre : `${pre}${base}`}`;
       hreflangs = [
-        { lang: "ko", href: koUrl },
-        { lang: "en", href: enUrl },
-        { lang: "x-default", href: koUrl },
+        { lang: "ko", href: langUrl("") },
+        { lang: "en", href: langUrl("/en") },
+        { lang: "ja", href: langUrl("/ja") },
+        { lang: "zh", href: langUrl("/zh") },
+        { lang: "x-default", href: langUrl("") },
       ];
     } catch {
       hreflangs = [];
