@@ -9,13 +9,13 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
+        title="코인장 코인바이패스 | 코인 결제·가상계좌 정산 — USDT 충전소 임대"
+        description="사업자 본인 통장 없이 코인(USDT)으로 결제받아 가상계좌로 정산하세요. 코인장(코인바이패스) USDT 충전소를 임대받아 운영 — 인프라·결제·정산 제공. USDT 충전·코인 결제·결제 우회 가이드 포함."
+        keywords="충전소 임대, 가상계좌 정산, 코인 결제, USDT 결제, 결제대행, 코인장, 코인바이패스, USDT 충전, TRC20, 스테이블코인, 가상자산 결제"
         canonical={`${site.domain}/ko`}
       />
       <CoinBypassLayout currentPath="/ko">
-        {/* Hero Section */}
+        {/* Hero — B2B first (charging-station rental / franchise) */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-coinbypass-primary/10 via-transparent to-coinbypass-secondary/10" />
           <div className="absolute inset-0">
@@ -25,39 +25,88 @@ export default function CoinBypassHome() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border mb-8">
-                <span className="text-coinbypass-primary">{site.emoji}</span>
-                <span className="text-sm text-coinbypass-muted-foreground">USDT 충전 · 코인 결제 · 결제 우회 가이드</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-8">
+                🏪 충전소 임대 · 창업
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  코인장 — 결제 제한 없는
+                  코인 결제 + 가상계좌 정산
                 </span>
                 <br />
-                <span className="text-white">USDT 코인 결제</span>
+                <span className="text-white">나만의 USDT 충전소 운영</span>
               </h1>
 
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
-                카드 결제가 막힌 서비스?
+                사업자 본인 통장 없이 코인(USDT)으로 결제받아 가상계좌로 정산.
                 <br className="hidden md:block" />
-                코인장에서 USDT를 충전하고 코인으로 우회 결제하세요.
+                인프라·결제·정산은 코인장(코인바이패스)이 제공합니다.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/ko/usdt-charge-guide"
+                  href={site.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary text-black font-semibold text-lg hover:opacity-90 transition-opacity"
                 >
-                  USDT 충전 가이드
+                  가맹 문의 →
                 </a>
                 <a
-                  href="/ko/bypass-payment"
+                  href="/ko/usdt-charge-guide"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold text-lg hover:bg-coinbypass-border transition-colors"
                 >
-                  결제 우회가 필요한 이유
+                  이용자 가이드
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* B2B feature cards */}
+        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                나만의 <span className="text-coinbypass-primary">충전소</span>를 운영하세요
+              </h2>
+              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
+                사업자 본인 통장 없이 — 코인으로 결제받아 가상계좌로 정산하세요.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "🏦", title: "통장 없이 정산", desc: "USDT로 결제받아 가상계좌로 정산 — 별도 입금용 본인 통장이 필요 없습니다" },
+                { icon: "⚡", title: "즉시 발급", desc: "신청 즉시 충전소 오픈 — 개발·서버 준비가 필요 없습니다" },
+                { icon: "🌐", title: "전용 도메인", desc: "내 브랜드 도메인을 연결해 독립적으로 운영하세요" },
+                { icon: "📊", title: "자동 정산", desc: "거래·수수료가 자동 집계되고 실시간으로 정산됩니다" },
+              ].map((c) => (
+                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <h3 className="font-bold mb-2">{c.title}</h3>
+                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href={site.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
+              >
+                가맹 문의 →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 이용자 안내 (consumer) ── */}
+        <section className="py-12 text-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border">
+              <span className="text-coinbypass-primary">{site.emoji}</span>
+              <span className="text-sm text-coinbypass-muted-foreground">이용자용 — USDT 충전 · 코인 결제 · 결제 우회 가이드</span>
             </div>
           </div>
         </section>
@@ -166,21 +215,21 @@ export default function CoinBypassHome() {
                   icon: "💰",
                   title: "USDT 충전 가이드",
                   desc: "코인장에서 USDT를 충전하는 단계별 방법과 주의사항",
-                  href: "/usdt-charge-guide",
+                  href: "/ko/usdt-charge-guide",
                   color: "from-amber-500 to-yellow-600",
                 },
                 {
                   icon: "🪙",
                   title: "코인 결제 방법",
                   desc: "지갑 주소 입력부터 결제 완료까지, 코인 결제 실전 절차",
-                  href: "/coin-payment",
+                  href: "/ko/coin-payment",
                   color: "from-orange-500 to-amber-600",
                 },
                 {
                   icon: "🔀",
                   title: "결제 우회 / 대체 결제",
                   desc: "카드·계좌가 막혔을 때 코인으로 우회하는 방법",
-                  href: "/bypass-payment",
+                  href: "/ko/bypass-payment",
                   color: "from-yellow-500 to-orange-600",
                 },
               ].map((item, i) => (
@@ -196,47 +245,6 @@ export default function CoinBypassHome() {
                   <p className="text-sm text-coinbypass-muted-foreground">{item.desc}</p>
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 업체(파트너) — 코인장 충전소 창업/임대 (B2B 듀얼 랜딩) */}
-        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 코인장 파트너 — 충전소 창업
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-coinbypass-primary">코인장</span> 충전소를 직접 운영하세요
-              </h2>
-              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                나만의 USDT 충전소를 코인장에서 임대받아 시작하세요. 인프라·결제·정산을 코인장이 제공합니다.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: "⚡", title: "즉시 발급", desc: "신청 즉시 충전소 오픈 — 개발·서버 준비 불필요" },
-                { icon: "🌐", title: "전용 도메인", desc: "내 브랜드 도메인을 연결해 독립 운영" },
-                { icon: "📊", title: "자동 정산", desc: "거래·수수료 자동 집계 + 실시간 정산" },
-                { icon: "💬", title: "텔레그램 연동", desc: "상담·충전 알림 봇 자동 연결" },
-              ].map((c) => (
-                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
-                  <div className="text-3xl mb-3">{c.icon}</div>
-                  <h3 className="font-bold mb-2">{c.title}</h3>
-                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <a
-                href={site.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
-              >
-                코인장 가맹 문의 →
-              </a>
             </div>
           </div>
         </section>

@@ -9,13 +9,13 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title={`CoinBypass CoinBypass | USDT 充值·加密货币支付·支付绕过指南 ${new Date().getFullYear()}`}
-        description="卡支付被拒？在CoinBypass充值 USDT，用加密货币绕过支付限制。USDT 充值、加密货币支付与支付绕过完整指南。"
-        keywords="USDT充值,加密货币支付,支付绕过,CoinBypass,CoinBypass,TRC20,泰达币,稳定币支付,海外服务支付"
+        title="CoinBypass — 币支付 + 虚拟账户结算 | USDT充值站创业"
+        description="无需经营者本人银行账户，用加密货币(USDT)收款并通过虚拟账户结算。租赁 USDT 充值站 — 基础设施、支付与结算由CoinBypass提供。另含 USDT 充值与币支付指南。"
+        keywords="充值站租赁,虚拟账户结算,币支付,USDT支付,支付网关,CoinBypass,USDT充值,TRC20,稳定币,加密货币支付"
         canonical={`${site.domain}/zh`}
       />
       <CoinBypassLayout currentPath="/zh">
-        {/* Hero Section */}
+        {/* Hero — B2B first (charging-station rental / franchise) */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-coinbypass-primary/10 via-transparent to-coinbypass-secondary/10" />
           <div className="absolute inset-0">
@@ -25,39 +25,88 @@ export default function CoinBypassHome() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border mb-8">
-                <span className="text-coinbypass-primary">{site.emoji}</span>
-                <span className="text-sm text-coinbypass-muted-foreground">USDT 充值 · 加密货币支付 · 支付绕过指南</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-8">
+                🏪 充值站租赁 · 创业
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  CoinBypass — 不受支付限制的
+                  币支付 + 虚拟账户结算
                 </span>
                 <br />
-                <span className="text-white">USDT 加密货币支付</span>
+                <span className="text-white">运营你自己的USDT充值站</span>
               </h1>
 
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
-                卡支付被封锁的服务？
+                无需经营者本人银行账户，用加密货币(USDT)收款
                 <br className="hidden md:block" />
-                在CoinBypass充值 USDT，用加密货币绕过支付限制。
+                并通过虚拟账户结算。基础设施、支付与结算由CoinBypass提供。
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/zh/usdt-charge-guide"
+                  href={site.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary text-black font-semibold text-lg hover:opacity-90 transition-opacity"
                 >
-                  USDT 充值指南
+                  加盟咨询 →
                 </a>
                 <a
-                  href="/zh/bypass-payment"
+                  href="/zh/usdt-charge-guide"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold text-lg hover:bg-coinbypass-border transition-colors"
                 >
-                  为何需要支付绕过
+                  用户指南
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* B2B feature cards */}
+        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                运营你自己的<span className="text-coinbypass-primary">充值站</span>
+              </h2>
+              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
+                无需经营者本人银行账户 — 用币支付收款并通过虚拟账户结算。
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "🏦", title: "无需账户结算", desc: "用 USDT 收款并通过虚拟账户结算 — 无需另设收款银行账户" },
+                { icon: "⚡", title: "即时开通", desc: "申请后立即开通充值站 — 无需开发或搭建服务器" },
+                { icon: "🌐", title: "专属域名", desc: "绑定自有品牌域名，独立运营" },
+                { icon: "📊", title: "自动结算", desc: "交易与手续费自动统计，实时结算" },
+              ].map((c) => (
+                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <h3 className="font-bold mb-2">{c.title}</h3>
+                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href={site.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
+              >
+                加盟咨询 →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── For users (consumer) ── */}
+        <section className="py-12 text-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border">
+              <span className="text-coinbypass-primary">{site.emoji}</span>
+              <span className="text-sm text-coinbypass-muted-foreground">面向用户 — USDT充值 · 币支付 · 支付绕过指南</span>
             </div>
           </div>
         </section>
@@ -166,21 +215,21 @@ export default function CoinBypassHome() {
                   icon: "💰",
                   title: "USDT 充值指南",
                   desc: "在CoinBypass充值 USDT 的分步方法与注意事项",
-                  href: "/usdt-charge-guide",
+                  href: "/zh/usdt-charge-guide",
                   color: "from-amber-500 to-yellow-600",
                 },
                 {
                   icon: "🪙",
                   title: "加密货币支付方法",
                   desc: "从输入钱包地址到完成支付，加密货币支付实战流程",
-                  href: "/coin-payment",
+                  href: "/zh/coin-payment",
                   color: "from-orange-500 to-amber-600",
                 },
                 {
                   icon: "🔀",
                   title: "支付绕过 / 替代支付",
                   desc: "当银行卡·账户被封锁时，用加密货币绕过的方法",
-                  href: "/bypass-payment",
+                  href: "/zh/bypass-payment",
                   color: "from-yellow-500 to-orange-600",
                 },
               ].map((item, i) => (
@@ -196,47 +245,6 @@ export default function CoinBypassHome() {
                   <p className="text-sm text-coinbypass-muted-foreground">{item.desc}</p>
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 업체(파트너) — 코인장 충전소 창업/임대 (B2B 듀얼 랜딩) */}
-        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 CoinBypass合作伙伴 — 充值站创业
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                亲自运营<span className="text-coinbypass-primary">CoinBypass</span>充值站
-              </h2>
-              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                从CoinBypass租赁，开启属于自己的 USDT 充值站。基础设施·支付·结算均由CoinBypass提供。
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: "⚡", title: "即时开通", desc: "申请后立即开通充值站 — 无需开发·搭建服务器" },
-                { icon: "🌐", title: "专属域名", desc: "绑定自有品牌域名，独立运营" },
-                { icon: "📊", title: "自动结算", desc: "交易·手续费自动统计 + 实时结算" },
-                { icon: "💬", title: "Telegram 集成", desc: "自动连接咨询·充值通知机器人" },
-              ].map((c) => (
-                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
-                  <div className="text-3xl mb-3">{c.icon}</div>
-                  <h3 className="font-bold mb-2">{c.title}</h3>
-                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <a
-                href={site.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
-              >
-                CoinBypass加盟咨询 →
-              </a>
             </div>
           </div>
         </section>
