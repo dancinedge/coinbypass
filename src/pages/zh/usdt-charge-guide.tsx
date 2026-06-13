@@ -205,7 +205,7 @@ export default function UsdtChargeGuidePage() {
               充值好 USDT 之后，下一步就是代币支付。从填写钱包地址到完成支付，一起来确认吧。
             </p>
             <a
-              href="/coin-payment"
+              href="/zh/coin-payment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               查看代币支付方法 →

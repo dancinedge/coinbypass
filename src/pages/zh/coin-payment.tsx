@@ -184,7 +184,7 @@ export default function CoinPaymentPage() {
               了解在银行卡·账户支付被拒的情况下，加密货币支付如何成为替代方案。
             </p>
             <a
-              href="/bypass-payment"
+              href="/zh/bypass-payment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               查看支付绕过指南 →

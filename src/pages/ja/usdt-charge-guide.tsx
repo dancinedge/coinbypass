@@ -205,7 +205,7 @@ export default function UsdtChargeGuidePage() {
               USDTをチャージしたら、次のステップはコイン決済です。ウォレットアドレスの入力から決済完了まで確認しましょう。
             </p>
             <a
-              href="/coin-payment"
+              href="/ja/coin-payment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               コイン決済方法を見る →

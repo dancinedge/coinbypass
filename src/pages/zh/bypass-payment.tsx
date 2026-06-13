@@ -197,7 +197,7 @@ export default function BypassPaymentPage() {
               绕过支付的起点是充值 USDT。请逐步了解币场的使用方法。
             </p>
             <a
-              href="/usdt-charge-guide"
+              href="/zh/usdt-charge-guide"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               查看 USDT 充值指南 →

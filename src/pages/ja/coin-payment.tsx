@@ -184,7 +184,7 @@ export default function CoinPaymentPage() {
               カード・口座決済が拒否される状況で、コイン決済がどのように代替手段になるかをご確認ください。
             </p>
             <a
-              href="/bypass-payment"
+              href="/ja/bypass-payment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               決済の迂回ガイドを見る →

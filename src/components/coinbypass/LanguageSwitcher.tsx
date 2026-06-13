@@ -5,9 +5,10 @@ import { useRouter } from "next/router";
  * 4개 언어 토글 (ko / en / ja / zh). 정적 export 사이트라 언어별 페이지가 실제 URL 로
  * 존재하며(/, /en, /ja, /zh), 현재 경로의 locale prefix 를 떼어 다른 언어 경로를 만든다.
  */
+// 영어가 기본 locale(루트, prefix 없음). 한국어는 /ko 로 이동.
 const LOCALES = [
-  { code: "ko", label: "KO", prefix: "" },
-  { code: "en", label: "EN", prefix: "/en" },
+  { code: "en", label: "EN", prefix: "" },
+  { code: "ko", label: "KO", prefix: "/ko" },
   { code: "ja", label: "日本語", prefix: "/ja" },
   { code: "zh", label: "中文", prefix: "/zh" },
 ] as const;
@@ -16,7 +17,7 @@ export function LanguageSwitcher() {
   const { asPath } = useRouter();
   const clean = (asPath.split("?")[0]?.split("#")[0] || "/").replace(/\/$/, "") || "/";
 
-  let current = "ko";
+  let current = "en";
   let base = clean;
   for (const l of LOCALES) {
     if (l.prefix && (clean === l.prefix || clean.startsWith(`${l.prefix}/`))) {

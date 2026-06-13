@@ -14,7 +14,7 @@ export default function CoinBypassHome() {
         keywords="USDT充值,加密货币支付,支付绕过,币场,CoinBypass,TRC20,泰达币,稳定币支付,海外服务支付"
         canonical={`${site.domain}/zh`}
       />
-      <CoinBypassLayout currentPath="/">
+      <CoinBypassLayout currentPath="/zh">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-coinbypass-primary/10 via-transparent to-coinbypass-secondary/10" />
@@ -46,13 +46,13 @@ export default function CoinBypassHome() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/usdt-charge-guide"
+                  href="/zh/usdt-charge-guide"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary text-black font-semibold text-lg hover:opacity-90 transition-opacity"
                 >
                   USDT 充值指南
                 </a>
                 <a
-                  href="/bypass-payment"
+                  href="/zh/bypass-payment"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold text-lg hover:bg-coinbypass-border transition-colors"
                 >
                   为何需要支付绕过

@@ -9,9 +9,9 @@ export default function CoinPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="코인장 코인 결제 방법 2025 - USDT로 결제하는 법 | 코인바이패스"
-        description="코인장(코인 충전소) USDT 코인 결제 완벽 가이드. 코인장에서 충전한 USDT로 지갑 주소·QR 입력부터 네트워크 선택, 결제 확인까지 안전하게 결제하는 실전 방법을 정리했습니다."
-        keywords="코인장, 코인결제, USDT결제, 코인 결제 방법, 코인 충전소, 가상자산 결제, 테더 결제, 코인 결제하는법"
+        title="How to Pay with Coins 2025 - Paying with USDT | CoinBypass"
+        description="A complete guide to USDT coin payments on Coinjang (coin top-up station). We cover the practical steps for paying safely with the USDT you topped up on Coinjang, from entering the wallet address and QR code to selecting the network and confirming the payment."
+        keywords="Coinjang, coin payment, USDT payment, how to pay with coins, coin top-up station, crypto asset payment, Tether payment, how to make a coin payment"
         canonical={`${site.domain}/coin-payment`}
       />
       <CoinBypassLayout currentPath="/coin-payment">
@@ -20,14 +20,15 @@ export default function CoinPaymentPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🪙 USDT 코인 결제
+                🪙 USDT Coin Payment
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-coinbypass-primary">코인 결제</span> 방법
+                How to <span className="text-coinbypass-primary">Pay with Coins</span>
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                코인장에서 충전한 USDT로 결제하는 것은 생각보다 간단합니다. 가맹점이 안내한 지갑 주소로
-                정해진 수량을 보내면 결제가 완료됩니다. 핵심은 네트워크와 주소 확인입니다.
+                Paying with the USDT you topped up on Coinjang is simpler than you might think. Just send the
+                specified amount to the wallet address provided by the merchant, and your payment is complete.
+                The key is verifying the network and the address.
               </p>
             </div>
           </div>
@@ -37,53 +38,53 @@ export default function CoinPaymentPage() {
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold mb-8">
-              코인 <span className="text-coinbypass-primary">결제 절차</span>
+              Coin <span className="text-coinbypass-primary">Payment Steps</span>
             </h2>
 
             <div className="space-y-6">
               {[
                 {
                   step: "1",
-                  title: "결제 금액·주소 확인",
-                  desc: "가맹점이 표시한 결제 수량(USDT)과 받는 지갑 주소를 확인합니다.",
+                  title: "Check the Amount and Address",
+                  desc: "Verify the payment amount (USDT) shown by the merchant and the receiving wallet address.",
                   details: [
-                    "결제 금액이 USDT 수량으로 표기됨",
-                    "받는 주소(QR 또는 문자열) 확인",
-                    "지정 네트워크(TRC20 등) 확인",
-                    "결제 유효시간(시세 고정 시간) 확인",
+                    "Payment amount is shown as a USDT quantity",
+                    "Verify the receiving address (QR code or text string)",
+                    "Verify the designated network (TRC20, etc.)",
+                    "Check the payment validity window (rate lock period)",
                   ],
                 },
                 {
                   step: "2",
-                  title: "지갑에서 송금 준비",
-                  desc: "USDT가 들어 있는 지갑을 열고 송금 화면으로 이동합니다.",
+                  title: "Prepare the Transfer in Your Wallet",
+                  desc: "Open the wallet holding your USDT and go to the send screen.",
                   details: [
-                    "보낼 코인: USDT 선택",
-                    "네트워크: 가맹점이 지정한 것과 동일하게",
-                    "주소 입력: 복사·붙여넣기 또는 QR 스캔",
-                    "수량 입력: 표시된 결제 수량 그대로",
+                    "Coin to send: select USDT",
+                    "Network: match exactly what the merchant designated",
+                    "Enter address: copy & paste or scan the QR code",
+                    "Enter amount: use the exact payment amount shown",
                   ],
                 },
                 {
                   step: "3",
-                  title: "주소·네트워크 최종 점검",
-                  desc: "송금 직전, 가장 중요한 확인 단계입니다.",
+                  title: "Final Check of Address and Network",
+                  desc: "This is the most important verification step right before sending.",
                   details: [
-                    "주소 첫·끝 글자 한 번 더 대조",
-                    "네트워크 불일치 시 자산 분실 가능",
-                    "수수료를 감안해 잔액 충분한지 확인",
-                    "고액 결제 전 소액 테스트 권장",
+                    "Double-check the first and last characters of the address",
+                    "A network mismatch can result in lost assets",
+                    "Make sure your balance is enough to cover fees",
+                    "A small test payment is recommended before large amounts",
                   ],
                 },
                 {
                   step: "4",
-                  title: "송금 및 결제 확인",
-                  desc: "송금을 실행하면 블록 확인 후 결제가 처리됩니다.",
+                  title: "Send and Confirm the Payment",
+                  desc: "Once you send, the payment is processed after block confirmation.",
                   details: [
-                    "TRC20 기준 수십 초 내 확인",
-                    "트랜잭션 해시(TXID) 보관",
-                    "가맹점 결제 완료 표시 확인",
-                    "문제 시 TXID로 문의",
+                    "Confirmed within tens of seconds on TRC20",
+                    "Keep the transaction hash (TXID)",
+                    "Verify the merchant's payment completion status",
+                    "If there's an issue, use the TXID to inquire",
                   ],
                 },
               ].map((item, i) => (
@@ -112,37 +113,37 @@ export default function CoinPaymentPage() {
         {/* 결제 수단 비교 */}
         <section className="py-16 bg-coinbypass-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8">코인 결제 vs 일반 결제</h2>
+            <h2 className="text-3xl font-bold mb-8">Coin Payment vs. Regular Payment</h2>
 
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b border-coinbypass-border">
-                    <th className="px-6 py-4 text-left font-semibold">항목</th>
-                    <th className="px-6 py-4 text-center font-semibold">USDT 코인 결제</th>
-                    <th className="px-6 py-4 text-center font-semibold">카드/계좌 결제</th>
+                    <th className="px-6 py-4 text-left font-semibold">Category</th>
+                    <th className="px-6 py-4 text-center font-semibold">USDT Coin Payment</th>
+                    <th className="px-6 py-4 text-center font-semibold">Card / Bank Payment</th>
                   </tr>
                 </thead>
                 <tbody className="text-coinbypass-muted-foreground">
                   <tr className="border-b border-coinbypass-border/50">
-                    <td className="px-6 py-4 text-white">결제 제한</td>
-                    <td className="px-6 py-4 text-center text-green-400">제한 적음</td>
-                    <td className="px-6 py-4 text-center">국가·가맹점 차단 빈번</td>
+                    <td className="px-6 py-4 text-white">Payment Restrictions</td>
+                    <td className="px-6 py-4 text-center text-green-400">Few restrictions</td>
+                    <td className="px-6 py-4 text-center">Frequent country/merchant blocks</td>
                   </tr>
                   <tr className="border-b border-coinbypass-border/50">
-                    <td className="px-6 py-4 text-white">처리 속도</td>
-                    <td className="px-6 py-4 text-center text-green-400">수십 초~수 분</td>
-                    <td className="px-6 py-4 text-center">즉시~수일</td>
+                    <td className="px-6 py-4 text-white">Processing Speed</td>
+                    <td className="px-6 py-4 text-center text-green-400">Tens of seconds to a few minutes</td>
+                    <td className="px-6 py-4 text-center">Instant to several days</td>
                   </tr>
                   <tr className="border-b border-coinbypass-border/50">
-                    <td className="px-6 py-4 text-white">이용 시간</td>
-                    <td className="px-6 py-4 text-center text-green-400">24시간</td>
-                    <td className="px-6 py-4 text-center">은행 영업시간 영향</td>
+                    <td className="px-6 py-4 text-white">Availability</td>
+                    <td className="px-6 py-4 text-center text-green-400">24 hours</td>
+                    <td className="px-6 py-4 text-center">Affected by bank hours</td>
                   </tr>
                   <tr className="border-b border-coinbypass-border/50">
-                    <td className="px-6 py-4 text-white">취소·환불</td>
-                    <td className="px-6 py-4 text-center text-red-400">불가(불가역적)</td>
-                    <td className="px-6 py-4 text-center">가능</td>
+                    <td className="px-6 py-4 text-white">Cancellation / Refund</td>
+                    <td className="px-6 py-4 text-center text-red-400">Not possible (irreversible)</td>
+                    <td className="px-6 py-4 text-center">Possible</td>
                   </tr>
                 </tbody>
               </table>
@@ -153,14 +154,14 @@ export default function CoinPaymentPage() {
         {/* 실사용 팁 */}
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-8">안전 결제 팁</h2>
+            <h2 className="text-3xl font-bold mb-8">Safe Payment Tips</h2>
 
             <div className="space-y-4">
               {[
-                { icon: "💡", title: "네트워크를 가장 먼저 확인", desc: "USDT는 TRC20·ERC20 등 여러 네트워크가 있습니다. 보내는 쪽과 받는 쪽이 다르면 자산을 잃을 수 있습니다." },
-                { icon: "💡", title: "TXID(트랜잭션 해시)를 보관", desc: "송금 후 생성되는 TXID는 결제 증빙입니다. 문제 발생 시 이 값으로 추적·문의할 수 있습니다." },
-                { icon: "💡", title: "수수료 여유분을 남겨두기", desc: "송금 수수료 때문에 잔액이 부족하면 결제가 실패합니다. TRC20는 수수료용 TRX를 소량 보유하면 좋습니다." },
-                { icon: "💡", title: "고액 결제 전 소액 테스트", desc: "처음 거래하는 주소라면 소액을 먼저 보내 정상 수신을 확인한 뒤 본 결제를 진행하세요." },
+                { icon: "💡", title: "Check the Network First", desc: "USDT exists on multiple networks such as TRC20 and ERC20. If the sending and receiving sides differ, you can lose your assets." },
+                { icon: "💡", title: "Keep the TXID (Transaction Hash)", desc: "The TXID generated after a transfer is your proof of payment. If a problem arises, you can use this value to track and inquire." },
+                { icon: "💡", title: "Leave a Buffer for Fees", desc: "If your balance is too low because of transfer fees, the payment fails. For TRC20, it helps to hold a small amount of TRX for fees." },
+                { icon: "💡", title: "Test with a Small Amount Before Large Payments", desc: "If it's an address you're transacting with for the first time, send a small amount first to confirm it's received correctly, then proceed with the full payment." },
               ].map((tip, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-coinbypass-card border border-coinbypass-border">
                   <span className="text-2xl">{tip.icon}</span>
@@ -178,16 +179,16 @@ export default function CoinPaymentPage() {
         <section className="py-16 bg-gradient-to-r from-amber-500/20 to-yellow-600/20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              결제가 막혔다면 코인으로 우회하세요
+              If Your Payment Is Blocked, Route Around It with Coins
             </h2>
             <p className="text-coinbypass-muted-foreground mb-8 max-w-2xl mx-auto">
-              카드·계좌 결제가 거부되는 상황에서 코인 결제가 어떻게 대안이 되는지 확인하세요.
+              See how coin payments serve as an alternative when card and bank payments are rejected.
             </p>
             <a
               href="/bypass-payment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
-              결제 우회 가이드 보기 →
+              View the Payment Bypass Guide →
             </a>
           </div>
         </section>

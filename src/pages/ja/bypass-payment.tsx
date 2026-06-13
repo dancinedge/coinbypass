@@ -197,7 +197,7 @@ export default function BypassPaymentPage() {
               迂回決済の出発点はUSDTチャージです。コインジャンの利用方法をステップごとに確認しましょう。
             </p>
             <a
-              href="/usdt-charge-guide"
+              href="/ja/usdt-charge-guide"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold hover:opacity-90 transition-opacity"
             >
               USDTチャージガイドを見る →
