@@ -28,7 +28,7 @@ export const SITES: Record<string, SiteConfig> = {
       "코인장(코인 충전소) 코인바이패스 — USDT 충전과 코인 결제로 결제 제한을 우회하는 가이드. 코인장 이용법, USDT(테더) 충전, 가상자산 결제, 안전한 송금 방법을 정리했습니다.",
     keywords:
       "코인장, USDT충전, 코인충전, 코인 충전소, 코인바이패스, 코인 결제, 결제우회, 가상자산 결제, 테더 충전, USDT 결제, 우회결제",
-    telegram: "https://t.me/brose770",
+    telegram: "https://t.me/enforce_ev",
     emoji: "💰",
     themeColor: "#F59E0B",
     pages: [
