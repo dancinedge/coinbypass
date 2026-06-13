@@ -20,6 +20,20 @@ const NAV_ITEMS_EN = [
   { label: "FAQ", href: "/en/faq" },
 ];
 
+const NAV_ITEMS_JA = [
+  { label: "USDT充電ガイド", href: "/ja/usdt-charge-guide" },
+  { label: "コイン決済", href: "/ja/coin-payment" },
+  { label: "決済迂回", href: "/ja/bypass-payment" },
+  { label: "FAQ", href: "/ja/faq" },
+];
+
+const NAV_ITEMS_ZH = [
+  { label: "USDT充值指南", href: "/zh/usdt-charge-guide" },
+  { label: "币支付", href: "/zh/coin-payment" },
+  { label: "支付绕过", href: "/zh/bypass-payment" },
+  { label: "FAQ", href: "/zh/faq" },
+];
+
 interface LayoutProps {
   children: React.ReactNode;
   currentPath?: string;
@@ -28,10 +42,16 @@ interface LayoutProps {
 export default function CoinBypassLayout({ children, currentPath }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { asPath } = useRouter();
-  // 영어 경로(/en…)면 영어 네비 + 영어 홈으로. (정적 export — 언어별 실제 URL)
-  const isEn = (asPath.split("?")[0].replace(/\/$/, "") || "/").startsWith("/en");
-  const navItems = isEn ? NAV_ITEMS_EN : NAV_ITEMS;
-  const homeHref = isEn ? "/en" : "/";
+  // 경로의 locale prefix(/en·/ja·/zh)로 언어별 네비 + 홈을 고른다. (정적 export — 언어별 실제 URL)
+  const cleanPath = (asPath.split("?")[0].replace(/\/$/, "") || "/");
+  const locale =
+    cleanPath === "/en" || cleanPath.startsWith("/en/") ? "en"
+    : cleanPath === "/ja" || cleanPath.startsWith("/ja/") ? "ja"
+    : cleanPath === "/zh" || cleanPath.startsWith("/zh/") ? "zh"
+    : "ko";
+  const navItems =
+    locale === "en" ? NAV_ITEMS_EN : locale === "ja" ? NAV_ITEMS_JA : locale === "zh" ? NAV_ITEMS_ZH : NAV_ITEMS;
+  const homeHref = locale === "ko" ? "/" : `/${locale}`;
   const currentYear = new Date().getFullYear();
 
   return (
