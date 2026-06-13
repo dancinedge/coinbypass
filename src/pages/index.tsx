@@ -9,13 +9,13 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title="CoinBypass — USDT Coin Payment Without Limits | CoinBypass Charging Guide"
-        description="Card payment blocked? Charge USDT at CoinBypass (coin charging station) and bypass payment limits with crypto. Step-by-step USDT charging and coin payment guides."
-        keywords="CoinBypass, USDT charge, coin payment, bypass payment, USDT, TRC20, stablecoin, crypto payment, alternative payment"
+        title="CoinBypass — Coin Payment + Virtual-Account Settlement | Launch a USDT Charging Station"
+        description="Accept crypto (USDT) payments without your own deposit bank account and settle via a virtual account. Rent a USDT charging station — infrastructure, payments, and settlement provided. Plus USDT charging and coin payment guides."
+        keywords="charging station rental, virtual account settlement, coin payment, USDT payment, payment gateway, CoinBypass, USDT charge, TRC20, stablecoin, crypto payment"
         canonical={site.domain}
       />
       <CoinBypassLayout currentPath="/">
-        {/* Hero Section */}
+        {/* Hero — B2B first (charging-station rental / franchise) */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-coinbypass-primary/10 via-transparent to-coinbypass-secondary/10" />
           <div className="absolute inset-0">
@@ -25,39 +25,88 @@ export default function CoinBypassHome() {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border mb-8">
-                <span className="text-coinbypass-primary">{site.emoji}</span>
-                <span className="text-sm text-coinbypass-muted-foreground">USDT Charging · Coin Payment · Bypass Payment Guide</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-8">
+                🏪 Charging Station Rental · Franchise
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  CoinBypass — Payment Without Limits
+                  Coin Payment + Virtual-Account Settlement
                 </span>
                 <br />
-                <span className="text-white">USDT Coin Payment</span>
+                <span className="text-white">Launch your own USDT charging station</span>
               </h1>
 
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
-                A service that won't accept your card?
+                Accept payments in crypto (USDT) without your own deposit bank account,
                 <br className="hidden md:block" />
-                Charge USDT at CoinBypass and bypass the limits by paying with crypto.
+                and settle through a virtual account. CoinBypass provides the infrastructure, payments, and settlement.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/usdt-charge-guide"
+                  href={site.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary text-black font-semibold text-lg hover:opacity-90 transition-opacity"
                 >
-                  USDT Charging Guide
+                  Franchise Inquiry →
                 </a>
                 <a
-                  href="/bypass-payment"
+                  href="/usdt-charge-guide"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold text-lg hover:bg-coinbypass-border transition-colors"
                 >
-                  Why You Need to Bypass Payment
+                  User Guides
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* B2B feature cards */}
+        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Run your own <span className="text-coinbypass-primary">charging station</span>
+              </h2>
+              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
+                No deposit bank account of your own — accept coin payments and settle via virtual account.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "🏦", title: "Settle Without a Bank Account", desc: "Accept payments in USDT and settle via a virtual account — no separate deposit bank account required" },
+                { icon: "⚡", title: "Instant Setup", desc: "Your charging station opens the moment you apply — no development or server setup needed" },
+                { icon: "🌐", title: "Custom Domain", desc: "Connect your own brand domain and operate independently" },
+                { icon: "📊", title: "Automatic Settlement", desc: "Transactions and fees are tallied automatically with real-time settlement" },
+              ].map((c) => (
+                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
+                  <div className="text-3xl mb-3">{c.icon}</div>
+                  <h3 className="font-bold mb-2">{c.title}</h3>
+                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href={site.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
+              >
+                Franchise Inquiry →
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── For users (consumer) ── */}
+        <section className="py-12 text-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coinbypass-muted border border-coinbypass-border">
+              <span className="text-coinbypass-primary">{site.emoji}</span>
+              <span className="text-sm text-coinbypass-muted-foreground">For Users — USDT Charging · Coin Payment · Bypass Guide</span>
             </div>
           </div>
         </section>
@@ -196,47 +245,6 @@ export default function CoinBypassHome() {
                   <p className="text-sm text-coinbypass-muted-foreground">{item.desc}</p>
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Partners — CoinBypass charging station franchise/rental (B2B dual landing) */}
-        <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 CoinBypass Partners — Launch a Charging Station
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Run your own <span className="text-coinbypass-primary">CoinBypass</span> charging station
-              </h2>
-              <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                Start your own USDT charging station by leasing it from CoinBypass. CoinBypass provides the infrastructure, payments, and settlement.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: "⚡", title: "Instant Setup", desc: "Your charging station opens the moment you apply — no development or server setup needed" },
-                { icon: "🌐", title: "Custom Domain", desc: "Connect your own brand domain and operate independently" },
-                { icon: "📊", title: "Automatic Settlement", desc: "Transactions and fees are tallied automatically with real-time settlement" },
-                { icon: "💬", title: "Telegram Integration", desc: "Support and charging notification bots are connected automatically" },
-              ].map((c) => (
-                <div key={c.title} className="rounded-xl border border-coinbypass-border bg-coinbypass-card p-6">
-                  <div className="text-3xl mb-3">{c.icon}</div>
-                  <h3 className="font-bold mb-2">{c.title}</h3>
-                  <p className="text-sm text-coinbypass-muted-foreground">{c.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-10">
-              <a
-                href={site.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
-              >
-                CoinBypass Franchise Inquiry →
-              </a>
             </div>
           </div>
         </section>
