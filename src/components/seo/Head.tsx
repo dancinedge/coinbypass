@@ -96,7 +96,9 @@ export function Head({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="canonical" href={canonical} />
       {hreflangs.map((h) => (
-        <link key={h.lang} rel="alternate" hrefLang={h.lang} href={h.href} />
+        // 소문자 `hreflang` 속성으로 출력(표준 표기). React 의 카멜 prop(hrefLang)은
+        // next/head 정적 export 시 대문자 그대로 직렬화되므로, 소문자 커스텀 속성으로 spread 한다.
+        <link key={h.lang} rel="alternate" href={h.href} {...({ hreflang: h.lang } as Record<string, string>)} />
       ))}
 
       {/* Robots */}
