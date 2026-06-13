@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { TelegramInquiry } from "@/components/common/TelegramInquiry";
+import { LanguageSwitcher } from "@/components/coinbypass/LanguageSwitcher";
 import { getSiteConfig } from "@/lib/sites";
 
 const site = getSiteConfig("coinbypass");
@@ -11,6 +13,13 @@ const NAV_ITEMS = [
   { label: "FAQ", href: "/faq" },
 ];
 
+const NAV_ITEMS_EN = [
+  { label: "USDT Guide", href: "/en/usdt-charge-guide" },
+  { label: "Coin Payment", href: "/en/coin-payment" },
+  { label: "Bypass", href: "/en/bypass-payment" },
+  { label: "FAQ", href: "/en/faq" },
+];
+
 interface LayoutProps {
   children: React.ReactNode;
   currentPath?: string;
@@ -18,6 +27,11 @@ interface LayoutProps {
 
 export default function CoinBypassLayout({ children, currentPath }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { asPath } = useRouter();
+  // 영어 경로(/en…)면 영어 네비 + 영어 홈으로. (정적 export — 언어별 실제 URL)
+  const isEn = (asPath.split("?")[0].replace(/\/$/, "") || "/").startsWith("/en");
+  const navItems = isEn ? NAV_ITEMS_EN : NAV_ITEMS;
+  const homeHref = isEn ? "/en" : "/";
   const currentYear = new Date().getFullYear();
 
   return (
@@ -27,7 +41,7 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2">
+            <a href={homeHref} className="flex items-center gap-2">
               <span className="text-2xl">{site.emoji}</span>
               <span className="text-xl font-bold bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary bg-clip-text text-transparent">
                 {site.name}
@@ -36,7 +50,7 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
-              {NAV_ITEMS.map((item) => (
+              {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -49,6 +63,9 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
                   {item.label}
                 </a>
               ))}
+              <div className="ml-2 pl-2 border-l border-coinbypass-border">
+                <LanguageSwitcher />
+              </div>
             </nav>
 
             {/* Mobile menu button */}
@@ -73,7 +90,7 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-coinbypass-border bg-coinbypass-background">
             <div className="px-4 py-4 space-y-2">
-              {NAV_ITEMS.map((item) => (
+              {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -86,6 +103,9 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
                   {item.label}
                 </a>
               ))}
+              <div className="px-4 pt-3 mt-2 border-t border-coinbypass-border">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         )}
