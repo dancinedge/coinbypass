@@ -14,7 +14,7 @@ export default function CoinBypassHome() {
         keywords="コインジャン, USDTチャージ, コインチャージ, コインチャージ所, CoinBypass, コイン決済, 決済回避, 暗号資産決済, テザーチャージ, USDT決済, 回避決済"
         canonical={`${site.domain}/ja`}
       />
-      <CoinBypassLayout currentPath="/">
+      <CoinBypassLayout currentPath="/ja">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-coinbypass-primary/10 via-transparent to-coinbypass-secondary/10" />
@@ -46,13 +46,13 @@ export default function CoinBypassHome() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/usdt-charge-guide"
+                  href="/ja/usdt-charge-guide"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-coinbypass-primary to-coinbypass-secondary text-black font-semibold text-lg hover:opacity-90 transition-opacity"
                 >
                   USDTチャージガイド
                 </a>
                 <a
-                  href="/bypass-payment"
+                  href="/ja/bypass-payment"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold text-lg hover:bg-coinbypass-border transition-colors"
                 >
                   決済回避が必要な理由

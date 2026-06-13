@@ -6,33 +6,78 @@ import { getSiteConfig } from "@/lib/sites";
 
 const site = getSiteConfig("coinbypass");
 
-const NAV_ITEMS = [
-  { label: "USDT 충전 가이드", href: "/usdt-charge-guide" },
-  { label: "코인 결제", href: "/coin-payment" },
-  { label: "결제 우회", href: "/bypass-payment" },
-  { label: "FAQ", href: "/faq" },
-];
+type Loc = "en" | "ko" | "ja" | "zh";
 
-const NAV_ITEMS_EN = [
-  { label: "USDT Guide", href: "/en/usdt-charge-guide" },
-  { label: "Coin Payment", href: "/en/coin-payment" },
-  { label: "Bypass", href: "/en/bypass-payment" },
-  { label: "FAQ", href: "/en/faq" },
-];
+// 내부 경로(언어 prefix 미포함). 렌더 시 locale prefix 를 앞에 붙인다.
+const PATHS = {
+  usdt: "/usdt-charge-guide",
+  coin: "/coin-payment",
+  bypass: "/bypass-payment",
+  faq: "/faq",
+} as const;
 
-const NAV_ITEMS_JA = [
-  { label: "USDT充電ガイド", href: "/ja/usdt-charge-guide" },
-  { label: "コイン決済", href: "/ja/coin-payment" },
-  { label: "決済迂回", href: "/ja/bypass-payment" },
-  { label: "FAQ", href: "/ja/faq" },
-];
-
-const NAV_ITEMS_ZH = [
-  { label: "USDT充值指南", href: "/zh/usdt-charge-guide" },
-  { label: "币支付", href: "/zh/coin-payment" },
-  { label: "支付绕过", href: "/zh/bypass-payment" },
-  { label: "FAQ", href: "/zh/faq" },
-];
+// 언어별 네비/푸터 문구. 영어가 기본(루트), 코인장 키워드는 한국어에만.
+const T: Record<Loc, {
+  nav: { label: string; key: keyof typeof PATHS }[];
+  tagline: [string, string];
+  secCharge: string; linkUsdt: string; linkCoin: string;
+  secBypass: string; linkBypass: string;
+  secSupport: string; linkFaq: string;
+  disclaimer: string;
+}> = {
+  en: {
+    nav: [
+      { label: "USDT Guide", key: "usdt" },
+      { label: "Coin Payment", key: "coin" },
+      { label: "Bypass", key: "bypass" },
+      { label: "FAQ", key: "faq" },
+    ],
+    tagline: ["USDT charging & coin payment", "Bypass payment guide platform"],
+    secCharge: "Coin Charging", linkUsdt: "USDT Charging Guide", linkCoin: "Coin Payment Guide",
+    secBypass: "Bypass Payment", linkBypass: "Bypass / Alternative Payment",
+    secSupport: "Support", linkFaq: "FAQ",
+    disclaimer: "This site is for informational purposes only and is not financial advice.",
+  },
+  ko: {
+    nav: [
+      { label: "USDT 충전 가이드", key: "usdt" },
+      { label: "코인 결제", key: "coin" },
+      { label: "결제 우회", key: "bypass" },
+      { label: "FAQ", key: "faq" },
+    ],
+    tagline: ["USDT 충전 & 코인 결제", "코인장 결제 우회 가이드 플랫폼"],
+    secCharge: "코인 충전", linkUsdt: "USDT 충전 가이드", linkCoin: "코인 결제 방법",
+    secBypass: "결제 우회", linkBypass: "결제 우회 / 대체 결제",
+    secSupport: "고객지원", linkFaq: "자주묻는질문",
+    disclaimer: "본 사이트는 정보 제공 목적이며, 금융 조언이 아닙니다.",
+  },
+  ja: {
+    nav: [
+      { label: "USDT充電ガイド", key: "usdt" },
+      { label: "コイン決済", key: "coin" },
+      { label: "決済迂回", key: "bypass" },
+      { label: "FAQ", key: "faq" },
+    ],
+    tagline: ["USDT充電 & コイン決済", "決済迂回ガイドプラットフォーム"],
+    secCharge: "コイン充電", linkUsdt: "USDT充電ガイド", linkCoin: "コイン決済方法",
+    secBypass: "決済迂回", linkBypass: "決済迂回 / 代替決済",
+    secSupport: "サポート", linkFaq: "よくある質問",
+    disclaimer: "本サイトは情報提供を目的としており、金融アドバイスではありません。",
+  },
+  zh: {
+    nav: [
+      { label: "USDT充值指南", key: "usdt" },
+      { label: "币支付", key: "coin" },
+      { label: "支付绕过", key: "bypass" },
+      { label: "FAQ", key: "faq" },
+    ],
+    tagline: ["USDT充值 & 币支付", "支付绕过指南平台"],
+    secCharge: "币充值", linkUsdt: "USDT充值指南", linkCoin: "币支付方法",
+    secBypass: "支付绕过", linkBypass: "支付绕过 / 替代支付",
+    secSupport: "客户支持", linkFaq: "常见问题",
+    disclaimer: "本网站仅供信息参考，不构成财务建议。",
+  },
+};
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -42,16 +87,17 @@ interface LayoutProps {
 export default function CoinBypassLayout({ children, currentPath }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { asPath } = useRouter();
-  // 경로의 locale prefix(/en·/ja·/zh)로 언어별 네비 + 홈을 고른다. (정적 export — 언어별 실제 URL)
-  const cleanPath = (asPath.split("?")[0].replace(/\/$/, "") || "/");
-  const locale =
-    cleanPath === "/en" || cleanPath.startsWith("/en/") ? "en"
+  // 경로의 locale prefix(/ko·/ja·/zh)로 언어를 고른다. prefix 없으면 영어(기본/루트).
+  const cleanPath = asPath.split("?")[0].replace(/\/$/, "") || "/";
+  const locale: Loc =
+    cleanPath === "/ko" || cleanPath.startsWith("/ko/") ? "ko"
     : cleanPath === "/ja" || cleanPath.startsWith("/ja/") ? "ja"
     : cleanPath === "/zh" || cleanPath.startsWith("/zh/") ? "zh"
-    : "ko";
-  const navItems =
-    locale === "en" ? NAV_ITEMS_EN : locale === "ja" ? NAV_ITEMS_JA : locale === "zh" ? NAV_ITEMS_ZH : NAV_ITEMS;
-  const homeHref = locale === "ko" ? "/" : `/${locale}`;
+    : "en";
+  const t = T[locale];
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  const homeHref = prefix || "/";
+  const href = (key: keyof typeof PATHS) => `${prefix}${PATHS[key]}`;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -70,19 +116,22 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`px-4 py-2 text-sm rounded-lg transition-colors ${
-                    currentPath === item.href
-                      ? "text-coinbypass-primary bg-coinbypass-muted"
-                      : "text-coinbypass-muted-foreground hover:text-white hover:bg-coinbypass-muted"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {t.nav.map((item) => {
+                const h = href(item.key);
+                return (
+                  <a
+                    key={item.key}
+                    href={h}
+                    className={`px-4 py-2 text-sm rounded-lg transition-colors ${
+                      currentPath === h
+                        ? "text-coinbypass-primary bg-coinbypass-muted"
+                        : "text-coinbypass-muted-foreground hover:text-white hover:bg-coinbypass-muted"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
               <div className="ml-2 pl-2 border-l border-coinbypass-border">
                 <LanguageSwitcher />
               </div>
@@ -110,19 +159,22 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-coinbypass-border bg-coinbypass-background">
             <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`block px-4 py-3 rounded-lg transition-colors ${
-                    currentPath === item.href
-                      ? "text-coinbypass-primary bg-coinbypass-muted"
-                      : "text-coinbypass-muted-foreground hover:text-white hover:bg-coinbypass-muted"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {t.nav.map((item) => {
+                const h = href(item.key);
+                return (
+                  <a
+                    key={item.key}
+                    href={h}
+                    className={`block px-4 py-3 rounded-lg transition-colors ${
+                      currentPath === h
+                        ? "text-coinbypass-primary bg-coinbypass-muted"
+                        : "text-coinbypass-muted-foreground hover:text-white hover:bg-coinbypass-muted"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
               <div className="px-4 pt-3 mt-2 border-t border-coinbypass-border">
                 <LanguageSwitcher />
               </div>
@@ -145,33 +197,33 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
                 <span className="text-xl font-bold">{site.name}</span>
               </div>
               <p className="text-sm text-coinbypass-muted-foreground">
-                USDT 충전 & 코인 결제<br />
-                결제 우회 가이드 플랫폼
+                {t.tagline[0]}<br />
+                {t.tagline[1]}
               </p>
             </div>
 
             {/* 코인 충전 */}
             <div>
-              <h4 className="font-semibold mb-4 text-coinbypass-primary">코인 충전</h4>
+              <h4 className="font-semibold mb-4 text-coinbypass-primary">{t.secCharge}</h4>
               <ul className="space-y-2 text-sm text-coinbypass-muted-foreground">
-                <li><a href="/usdt-charge-guide" className="hover:text-white transition-colors">USDT 충전 가이드</a></li>
-                <li><a href="/coin-payment" className="hover:text-white transition-colors">코인 결제 방법</a></li>
+                <li><a href={href("usdt")} className="hover:text-white transition-colors">{t.linkUsdt}</a></li>
+                <li><a href={href("coin")} className="hover:text-white transition-colors">{t.linkCoin}</a></li>
               </ul>
             </div>
 
             {/* 결제 우회 */}
             <div>
-              <h4 className="font-semibold mb-4 text-coinbypass-primary">결제 우회</h4>
+              <h4 className="font-semibold mb-4 text-coinbypass-primary">{t.secBypass}</h4>
               <ul className="space-y-2 text-sm text-coinbypass-muted-foreground">
-                <li><a href="/bypass-payment" className="hover:text-white transition-colors">결제 우회 / 대체 결제</a></li>
+                <li><a href={href("bypass")} className="hover:text-white transition-colors">{t.linkBypass}</a></li>
               </ul>
             </div>
 
             {/* 고객지원 */}
             <div>
-              <h4 className="font-semibold mb-4 text-coinbypass-primary">고객지원</h4>
+              <h4 className="font-semibold mb-4 text-coinbypass-primary">{t.secSupport}</h4>
               <ul className="space-y-2 text-sm text-coinbypass-muted-foreground">
-                <li><a href="/faq" className="hover:text-white transition-colors">자주묻는질문</a></li>
+                <li><a href={href("faq")} className="hover:text-white transition-colors">{t.linkFaq}</a></li>
               </ul>
             </div>
           </div>
@@ -181,7 +233,7 @@ export default function CoinBypassLayout({ children, currentPath }: LayoutProps)
               © {currentYear} {site.name}. All rights reserved.
             </p>
             <p className="text-xs text-coinbypass-muted-foreground">
-              본 사이트는 정보 제공 목적이며, 금융 조언이 아닙니다.
+              {t.disclaimer}
             </p>
           </div>
         </div>

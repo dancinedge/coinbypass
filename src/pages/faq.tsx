@@ -6,78 +6,78 @@ const site = getSiteConfig("coinbypass");
 
 const FAQ_SECTIONS = [
   {
-    title: "USDT 충전",
+    title: "USDT Top-Up",
     items: [
       {
-        q: "USDT(테더)가 무엇인가요?",
-        a: "USDT는 1달러에 가치가 연동된 스테이블코인입니다. 비트코인·이더리움과 달리 시세 변동이 거의 없어 결제·송금에 적합합니다. 코인장(코인 충전소)에서 원화로 USDT를 충전해 결제에 사용할 수 있습니다.",
+        q: "What is USDT (Tether)?",
+        a: "USDT is a stablecoin pegged to the value of one US dollar. Unlike Bitcoin or Ethereum, its price barely fluctuates, making it well suited for payments and transfers. At a Coinjang (coin top-up service), you can top up USDT with Korean won and use it for payments.",
       },
       {
-        q: "코인장(코인 충전소)이란 무엇인가요?",
-        a: "원화로 USDT 등 가상자산을 충전해 주는 서비스를 흔히 코인장 또는 코인 충전소라고 부릅니다. 입금하면 지정한 지갑 주소로 USDT를 전송해 줍니다. 시세와 수수료를 투명하게 공개하는 곳을 이용하는 것이 안전합니다.",
+        q: "What is a Coinjang (coin top-up service)?",
+        a: "A service that lets you top up crypto assets such as USDT using Korean won is commonly called a Coinjang or coin top-up service. Once you deposit, it sends USDT to the wallet address you specify. It is safest to use providers that transparently disclose their rates and fees.",
       },
       {
-        q: "충전할 때 어떤 네트워크를 선택해야 하나요?",
-        a: "일반적으로 수수료가 저렴하고 빠른 TRC20(트론) 네트워크를 권장합니다. 받는 지갑이 지원하는 네트워크와 보내는 네트워크가 반드시 일치해야 하며, 불일치 시 자산을 잃을 수 있습니다.",
+        q: "Which network should I choose when topping up?",
+        a: "We generally recommend the TRC20 (Tron) network, which is fast and has low fees. The receiving wallet's supported network and the sending network must match exactly; a mismatch can result in lost assets.",
       },
       {
-        q: "충전 시세는 어떻게 결정되나요?",
-        a: "USDT 시세는 기본적으로 환율에 충전소의 마진(스프레드)이 더해진 값입니다. 업체마다 다르므로 충전 전 실시간 시세와 수수료를 확인하세요.",
+        q: "How is the top-up rate determined?",
+        a: "The USDT rate is basically the exchange rate plus the top-up service's margin (spread). It varies by provider, so check the real-time rate and fees before topping up.",
       },
     ],
   },
   {
-    title: "코인 결제",
+    title: "Coin Payments",
     items: [
       {
-        q: "코인 결제는 어떻게 하나요?",
-        a: "가맹점이 안내한 지갑 주소로 표시된 USDT 수량을 송금하면 결제가 완료됩니다. 송금 전 네트워크와 주소를 반드시 확인하고, 송금 후 생성되는 TXID(트랜잭션 해시)를 보관하세요.",
+        q: "How do I pay with coins?",
+        a: "Simply send the displayed amount of USDT to the wallet address provided by the merchant, and the payment is complete. Always verify the network and address before sending, and keep the TXID (transaction hash) generated after the transfer.",
       },
       {
-        q: "결제가 얼마나 빨리 처리되나요?",
-        a: "TRC20 네트워크 기준 보통 수십 초 내에 블록 확인이 완료됩니다. 네트워크 혼잡도에 따라 다소 지연될 수 있습니다.",
+        q: "How fast is a payment processed?",
+        a: "On the TRC20 network, block confirmation usually completes within a few dozen seconds. It may be slightly delayed depending on network congestion.",
       },
       {
-        q: "코인 결제를 취소할 수 있나요?",
-        a: "블록체인 송금은 불가역적이라 한 번 전송하면 취소·환불이 불가능합니다. 그래서 송금 전 주소·네트워크·수량 확인이 가장 중요합니다. 처음 거래하는 주소라면 소액 테스트를 권장합니다.",
+        q: "Can I cancel a coin payment?",
+        a: "Blockchain transfers are irreversible, so once sent they cannot be canceled or refunded. That is why verifying the address, network, and amount before sending is the most important step. For an address you are transacting with for the first time, we recommend a small test transfer.",
       },
       {
-        q: "USDT 외에 다른 코인으로도 결제할 수 있나요?",
-        a: "USDC 등 다른 스테이블코인을 지원하는 가맹점도 있습니다. 다만 BTC·ETH는 시세 변동과 수수료 때문에 결제용으로는 권장되지 않습니다. 가맹점이 지원하는 코인을 먼저 확인하세요.",
+        q: "Can I pay with coins other than USDT?",
+        a: "Some merchants support other stablecoins such as USDC. However, BTC and ETH are not recommended for payments due to price volatility and fees. Check which coins the merchant supports first.",
       },
     ],
   },
   {
-    title: "결제 우회",
+    title: "Payment Bypass",
     items: [
       {
-        q: "왜 코인으로 우회 결제를 하나요?",
-        a: "국내 카드·계좌로는 결제가 막히는 해외 서비스가 많습니다. 코인 결제는 카드사·은행을 거치지 않으므로 이런 지역·업종 제한을 우회하는 대안이 됩니다.",
+        q: "Why use coins for bypass payments?",
+        a: "Many overseas services are blocked for domestic cards and bank accounts. Because coin payments do not go through card companies or banks, they offer an alternative for bypassing such regional or industry restrictions.",
       },
       {
-        q: "코인 결제가 항상 가능한가요?",
-        a: "가맹점이 암호화폐 결제를 지원해야 가능합니다. 지원하지 않는 곳에서는 해외 가상카드 등 다른 대체 결제를 검토해야 합니다.",
+        q: "Are coin payments always possible?",
+        a: "They are only possible if the merchant supports cryptocurrency payments. Where it is not supported, you should consider other alternative payment methods such as overseas virtual cards.",
       },
       {
-        q: "우회 결제 시 무엇을 가장 조심해야 하나요?",
-        a: "네트워크 불일치로 인한 자산 분실과 사기 업체입니다. 신뢰할 수 있는 충전소·가맹점만 이용하고, 비정상적으로 유리한 조건을 내세우는 곳은 피하세요.",
+        q: "What should I be most careful about with bypass payments?",
+        a: "Asset loss due to network mismatch, and fraudulent providers. Use only trustworthy top-up services and merchants, and avoid places that advertise abnormally favorable terms.",
       },
     ],
   },
   {
-    title: "보안 및 법률",
+    title: "Security & Legal",
     items: [
       {
-        q: "가상자산 결제가 합법인가요?",
-        a: "가상자산 보유·거래 자체는 합법입니다. 다만 거래 규모에 따라 소득·자금출처 신고 의무가 있을 수 있습니다. 구체적인 사항은 세무·법률 전문가와 상담하세요.",
+        q: "Are crypto asset payments legal?",
+        a: "Holding and trading crypto assets is itself legal. However, depending on the transaction size, you may have an obligation to report income or the source of funds. For specifics, consult a tax or legal professional.",
       },
       {
-        q: "지갑 시드 문구는 어떻게 관리하나요?",
-        a: "시드 문구(복구 구문)는 절대 타인에게 공유하지 마세요. 이 문구가 노출되면 지갑 자산 전체를 탈취당할 수 있습니다. 오프라인에 안전하게 보관하는 것이 원칙입니다.",
+        q: "How do I manage my wallet seed phrase?",
+        a: "Never share your seed phrase (recovery phrase) with anyone. If this phrase is exposed, all of your wallet assets can be stolen. As a rule, store it safely offline.",
       },
       {
-        q: "잘못된 주소로 송금하면 되돌릴 수 있나요?",
-        a: "블록체인 송금은 되돌릴 수 없습니다. 존재하지 않는 주소나 다른 네트워크 주소로 보낸 경우 복구가 사실상 불가능합니다. 송금 전 주소와 네트워크를 반드시 이중 확인하세요.",
+        q: "If I send to the wrong address, can it be reversed?",
+        a: "Blockchain transfers cannot be reversed. If you send to a nonexistent address or an address on a different network, recovery is practically impossible. Always double-check the address and network before sending.",
       },
     ],
   },
@@ -88,9 +88,9 @@ export default function FAQPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="자주묻는질문 (FAQ) - 코인바이패스"
-        description="USDT 충전, 코인 결제, 결제 우회 관련 자주묻는질문. 코인장 이용법, 네트워크 선택, 안전 수칙 FAQ."
-        keywords="USDT충전FAQ, 코인결제질문, 코인장질문, 결제우회질문, 테더충전FAQ"
+        title="Frequently Asked Questions (FAQ) - CoinBypass"
+        description="FAQs about USDT top-up, coin payments, and payment bypass. How to use a Coinjang, choosing a network, and safety guidelines."
+        keywords="USDT top-up FAQ, coin payment questions, Coinjang questions, payment bypass questions, Tether top-up FAQ"
         canonical={`${site.domain}/faq`}
       />
       <CoinBypassLayout currentPath="/faq">
@@ -99,10 +99,10 @@ export default function FAQPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                자주 묻는 <span className="text-coinbypass-primary">질문</span>
+                Frequently Asked <span className="text-coinbypass-primary">Questions</span>
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                USDT 충전, 코인 결제, 결제 우회에 관한 궁금증을 해결해 드립니다.
+                We answer your questions about USDT top-up, coin payments, and payment bypass.
               </p>
             </div>
           </div>
@@ -147,10 +147,10 @@ export default function FAQPage() {
         <section className="py-16 bg-coinbypass-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              더 궁금한 점이 있으신가요?
+              Have more questions?
             </h2>
             <p className="text-coinbypass-muted-foreground mb-8 max-w-2xl mx-auto">
-              USDT 충전·코인 결제에 대한 추가 문의는 텔레그램으로 남겨 주세요.
+              For additional inquiries about USDT top-up and coin payments, please reach out via Telegram.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -159,13 +159,13 @@ export default function FAQPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-400 font-semibold hover:bg-amber-500/30 transition-colors"
               >
-                텔레그램 문의
+                Contact on Telegram
               </a>
               <a
                 href="/usdt-charge-guide"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold hover:bg-coinbypass-border transition-colors"
               >
-                USDT 충전 가이드
+                USDT Top-Up Guide
               </a>
             </div>
           </div>
@@ -177,9 +177,9 @@ export default function FAQPage() {
             <div className="flex items-start gap-4">
               <span className="text-xl flex-shrink-0">⚠️</span>
               <p className="text-yellow-200/80 text-sm">
-                <strong className="text-yellow-400">면책 조항:</strong> 본 사이트의 정보는 참고용이며, 금융/법률 조언이 아닙니다.
-                가상자산 거래·결제 시 관련 법규와 세금 의무를 반드시 확인하시고, 필요 시 전문가와 상담하세요.
-                코인 송금은 취소·환불이 불가능하므로 주소와 네트워크를 항상 이중 확인하세요.
+                <strong className="text-yellow-400">Disclaimer:</strong> The information on this site is for reference only and is not financial or legal advice.
+                When trading or paying with crypto assets, be sure to check the relevant laws and tax obligations, and consult a professional if needed.
+                Coin transfers cannot be canceled or refunded, so always double-check the address and network.
               </p>
             </div>
           </div>

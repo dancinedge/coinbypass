@@ -162,7 +162,7 @@ export default function FAQPage() {
                 テレグラムでお問い合わせ
               </a>
               <a
-                href="/usdt-charge-guide"
+                href="/ja/usdt-charge-guide"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-coinbypass-muted border border-coinbypass-border text-white font-semibold hover:bg-coinbypass-border transition-colors"
               >
                 USDTチャージガイド

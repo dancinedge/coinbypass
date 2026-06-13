@@ -23,10 +23,23 @@ export function Head({
   jsonLd,
   siteId = "solutionz",
 }: HeadProps) {
-  // 기본 JSON-LD. coinbypass 는 "코인장" 별칭(alternateName) + Organization 을 함께 노출해
-  // "코인장" 검색 시 브랜드(코인바이패스)와 연결되도록 한다(SEO).
+  // coinbypass 다국어 — 페이지 언어를 canonical 경로 prefix 로 판별(영어=루트, ko/ja/zh=prefix).
+  const pageLocale: "en" | "ko" | "ja" | "zh" = (() => {
+    try {
+      const p = new URL(canonical).pathname.replace(/\/$/, "") || "/";
+      if (p === "/ko" || p.startsWith("/ko/")) return "ko";
+      if (p === "/ja" || p.startsWith("/ja/")) return "ja";
+      if (p === "/zh" || p.startsWith("/zh/")) return "zh";
+      return "en";
+    } catch {
+      return "en";
+    }
+  })();
+
+  // 기본 JSON-LD. "코인장" 별칭(alternateName)은 **한국어 페이지에만** 노출한다
+  // ("코인장" 은 한국어 키워드 — 한국어 페이지에서만 브랜드와 연결, 그 외 언어는 일반 WebSite).
   const defaultJsonLd =
-    siteId === "coinbypass"
+    siteId === "coinbypass" && pageLocale === "ko"
       ? {
           "@context": "https://schema.org",
           "@graph": [
@@ -61,9 +74,9 @@ export function Head({
     try {
       const u = new URL(canonical);
       const p = u.pathname.replace(/\/$/, "") || "/";
-      // 현재 경로에서 locale prefix 제거 → base path (ko 기준 경로)
+      // 현재 경로에서 locale prefix 제거 → base path (영어=루트 기준 경로)
       let base = p;
-      for (const pre of ["/en", "/ja", "/zh"]) {
+      for (const pre of ["/ko", "/ja", "/zh"]) {
         if (p === pre || p.startsWith(`${pre}/`)) {
           base = p.slice(pre.length) || "/";
           break;
@@ -72,8 +85,8 @@ export function Head({
       const langUrl = (pre: string) =>
         `${u.origin}${!pre ? (base === "/" ? "/" : base) : base === "/" ? pre : `${pre}${base}`}`;
       hreflangs = [
-        { lang: "ko", href: langUrl("") },
-        { lang: "en", href: langUrl("/en") },
+        { lang: "en", href: langUrl("") },
+        { lang: "ko", href: langUrl("/ko") },
         { lang: "ja", href: langUrl("/ja") },
         { lang: "zh", href: langUrl("/zh") },
         { lang: "x-default", href: langUrl("") },
@@ -110,7 +123,7 @@ export function Head({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:locale" content="ko_KR" />
+      <meta property="og:locale" content={{ en: "en_US", ko: "ko_KR", ja: "ja_JP", zh: "zh_CN" }[pageLocale]} />
       {siteName && <meta property="og:site_name" content={siteName} />}
       <meta property="og:image" content={finalOgImage} />
       <meta property="og:image:width" content="1200" />
