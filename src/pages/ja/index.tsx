@@ -9,9 +9,9 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title="コインジャン CoinBypass | USDTチャージ・コイン決済・決済回避ガイド"
-        description="コインジャン（コインチャージ所）CoinBypass — USDTチャージとコイン決済で決済制限を回避するガイド。コインジャンの使い方、USDT（テザー）チャージ、暗号資産決済、安全な送金方法をまとめました。"
-        keywords="コインジャン, USDTチャージ, コインチャージ, コインチャージ所, CoinBypass, コイン決済, 決済回避, 暗号資産決済, テザーチャージ, USDT決済, 回避決済"
+        title="CoinBypass CoinBypass | USDTチャージ・コイン決済・決済回避ガイド"
+        description="CoinBypass（コインチャージ所）CoinBypass — USDTチャージとコイン決済で決済制限を回避するガイド。CoinBypassの使い方、USDT（テザー）チャージ、暗号資産決済、安全な送金方法をまとめました。"
+        keywords="CoinBypass, USDTチャージ, コインチャージ, コインチャージ所, CoinBypass, コイン決済, 決済回避, 暗号資産決済, テザーチャージ, USDT決済, 回避決済"
         canonical={`${site.domain}/ja`}
       />
       <CoinBypassLayout currentPath="/ja">
@@ -32,7 +32,7 @@ export default function CoinBypassHome() {
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  コインジャン — 決済制限のない
+                  CoinBypass — 決済制限のない
                 </span>
                 <br />
                 <span className="text-white">USDTコイン決済</span>
@@ -41,7 +41,7 @@ export default function CoinBypassHome() {
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
                 カード決済がブロックされたサービス？
                 <br className="hidden md:block" />
-                コインジャンでUSDTをチャージし、コインで回避決済しましょう。
+                CoinBypassでUSDTをチャージし、コインで回避決済しましょう。
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -165,7 +165,7 @@ export default function CoinBypassHome() {
                 {
                   icon: "💰",
                   title: "USDTチャージガイド",
-                  desc: "コインジャンでUSDTをチャージする手順別の方法と注意点",
+                  desc: "CoinBypassでUSDTをチャージする手順別の方法と注意点",
                   href: "/usdt-charge-guide",
                   color: "from-amber-500 to-yellow-600",
                 },
@@ -205,13 +205,13 @@ export default function CoinBypassHome() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 コインジャンパートナー — チャージ所の開業
+                🏪 CoinBypassパートナー — チャージ所の開業
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-coinbypass-primary">コインジャン</span>チャージ所を自分で運営しましょう
+                <span className="text-coinbypass-primary">CoinBypass</span>チャージ所を自分で運営しましょう
               </h2>
               <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                自分だけのUSDTチャージ所をコインジャンからレンタルして始めましょう。インフラ・決済・精算はコインジャンが提供します。
+                自分だけのUSDTチャージ所をCoinBypassからレンタルして始めましょう。インフラ・決済・精算はCoinBypassが提供します。
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -235,7 +235,7 @@ export default function CoinBypassHome() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
               >
-                コインジャン加盟のお問い合わせ →
+                CoinBypass加盟のお問い合わせ →
               </a>
             </div>
           </div>

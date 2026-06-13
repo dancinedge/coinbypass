@@ -9,9 +9,9 @@ export default function BypassPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="Coinjang Payment Bypass / Alternative Payment Guide 2025 - Pay with Crypto | CoinBypass"
-        description="How to bypass with crypto (USDT) on Coinjang when card or bank payments are blocked. We cover situations where a payment bypass is needed, a comparison of alternative payment methods, and safety tips for using Coinjang."
-        keywords="Coinjang, payment bypass, bypass payment, alternative payment, crypto bypass payment, USDT bypass, payment blocked, overseas payment bypass"
+        title="CoinBypass Payment Bypass / Alternative Payment Guide 2025 - Pay with Crypto | CoinBypass"
+        description="How to bypass with crypto (USDT) on CoinBypass when card or bank payments are blocked. We cover situations where a payment bypass is needed, a comparison of alternative payment methods, and safety tips for using CoinBypass."
+        keywords="CoinBypass, payment bypass, bypass payment, alternative payment, crypto bypass payment, USDT bypass, payment blocked, overseas payment bypass"
         canonical={`${site.domain}/bypass-payment`}
       />
       <CoinBypassLayout currentPath="/bypass-payment">
@@ -75,7 +75,7 @@ export default function BypassPaymentPage() {
                 {
                   step: "1",
                   title: "Top Up USDT",
-                  desc: "Buy USDT with Korean won on Coinjang and keep it in your wallet.",
+                  desc: "Buy USDT with Korean won on CoinBypass and keep it in your wallet.",
                   details: [
                     "TRC20 network recommended (cheap and fast)",
                     "Top up the payment amount plus a buffer for fees",
@@ -194,7 +194,7 @@ export default function BypassPaymentPage() {
               Top Up USDT First
             </h2>
             <p className="text-coinbypass-muted-foreground mb-8 max-w-2xl mx-auto">
-              The starting point for a bypass payment is topping up USDT. Check the step-by-step guide to using Coinjang.
+              The starting point for a bypass payment is topping up USDT. Check the step-by-step guide to using CoinBypass.
             </p>
             <a
               href="/usdt-charge-guide"

@@ -10,11 +10,11 @@ const FAQ_SECTIONS = [
     items: [
       {
         q: "USDT（泰达币）是什么？",
-        a: "USDT 是一种与 1 美元价值挂钩的稳定币。与比特币、以太坊不同，它的价格几乎没有波动，非常适合用于支付和转账。在币场（数字货币充值站）可以用韩元充值 USDT，并用于支付。",
+        a: "USDT 是一种与 1 美元价值挂钩的稳定币。与比特币、以太坊不同，它的价格几乎没有波动，非常适合用于支付和转账。在CoinBypass（数字货币充值站）可以用韩元充值 USDT，并用于支付。",
       },
       {
-        q: "币场（数字货币充值站）是什么？",
-        a: "用韩元为 USDT 等虚拟资产充值的服务，通常被称为币场或数字货币充值站。完成入金后，它会把 USDT 转入您指定的钱包地址。建议选择透明公开汇率和手续费的服务商，更为安全。",
+        q: "CoinBypass（数字货币充值站）是什么？",
+        a: "用韩元为 USDT 等虚拟资产充值的服务，通常被称为CoinBypass或数字货币充值站。完成入金后，它会把 USDT 转入您指定的钱包地址。建议选择透明公开汇率和手续费的服务商，更为安全。",
       },
       {
         q: "充值时应该选择哪个网络？",
@@ -89,8 +89,8 @@ export default function FAQPage() {
       <Head
         siteId="coinbypass"
         title="常见问题 (FAQ) - CoinBypass"
-        description="关于 USDT 充值、数字货币支付、绕开支付限制的常见问题。币场使用方法、网络选择、安全须知 FAQ。"
-        keywords="USDT充值FAQ, 数字货币支付问题, 币场问题, 绕开支付限制问题, 泰达币充值FAQ"
+        description="关于 USDT 充值、数字货币支付、绕开支付限制的常见问题。CoinBypass使用方法、网络选择、安全须知 FAQ。"
+        keywords="USDT充值FAQ, 数字货币支付问题, CoinBypass问题, 绕开支付限制问题, 泰达币充值FAQ"
         canonical={`${site.domain}/zh/faq`}
       />
       <CoinBypassLayout currentPath="/zh/faq">

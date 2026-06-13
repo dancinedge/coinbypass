@@ -9,9 +9,9 @@ export default function CoinPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="币场加密货币支付方法 2025 - 用 USDT 付款指南 | CoinBypass"
-        description="币场（加密货币充值站）USDT 支付完整指南。整理了用在币场充值的 USDT，从输入钱包地址·二维码到选择网络、确认支付的安全实战付款方法。"
-        keywords="币场, 加密货币支付, USDT支付, 加密货币支付方法, 加密货币充值站, 虚拟资产支付, 泰达币支付, 怎么用加密货币付款"
+        title="CoinBypass加密货币支付方法 2025 - 用 USDT 付款指南 | CoinBypass"
+        description="CoinBypass（加密货币充值站）USDT 支付完整指南。整理了用在CoinBypass充值的 USDT，从输入钱包地址·二维码到选择网络、确认支付的安全实战付款方法。"
+        keywords="CoinBypass, 加密货币支付, USDT支付, 加密货币支付方法, 加密货币充值站, 虚拟资产支付, 泰达币支付, 怎么用加密货币付款"
         canonical={`${site.domain}/zh/coin-payment`}
       />
       <CoinBypassLayout currentPath="/zh/coin-payment">
@@ -26,7 +26,7 @@ export default function CoinPaymentPage() {
                 <span className="text-coinbypass-primary">加密货币支付</span> 方法
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                用在币场充值的 USDT 付款比想象中简单。只要将指定数量发送到商户提供的钱包地址，
+                用在CoinBypass充值的 USDT 付款比想象中简单。只要将指定数量发送到商户提供的钱包地址，
                 支付即告完成。关键在于核对网络和地址。
               </p>
             </div>

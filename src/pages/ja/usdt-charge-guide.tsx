@@ -9,9 +9,9 @@ export default function UsdtChargeGuidePage() {
     <>
       <Head
         siteId="coinbypass"
-        title="USDTチャージガイド2025 - コインジャンでテザーをチャージする方法 | CoinBypass"
-        description="USDT(テザー)チャージ完全ガイド。コインジャンの使い方、TRC20ネットワークの選択、ウォレットアドレスの確認、チャージ手数料やレートまで段階的に解説します。"
-        keywords="USDTチャージ, テザーチャージ, コインジャン, コインチャージ所, USDTチャージ方法, TRC20チャージ, コインチャージガイド"
+        title="USDTチャージガイド2025 - CoinBypassでテザーをチャージする方法 | CoinBypass"
+        description="USDT(テザー)チャージ完全ガイド。CoinBypassの使い方、TRC20ネットワークの選択、ウォレットアドレスの確認、チャージ手数料やレートまで段階的に解説します。"
+        keywords="USDTチャージ, テザーチャージ, CoinBypass, コインチャージ所, USDTチャージ方法, TRC20チャージ, コインチャージガイド"
         canonical={`${site.domain}/ja/usdt-charge-guide`}
       />
       <CoinBypassLayout currentPath="/ja/usdt-charge-guide">
@@ -20,13 +20,13 @@ export default function UsdtChargeGuidePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                💰 コインジャン USDTチャージ
+                💰 CoinBypass USDTチャージ
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-coinbypass-primary">USDTチャージ</span> ガイド
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                テザー(USDT)は1ドルに連動したステーブルコインです。コインジャン(コインチャージ所)で日本円から
+                テザー(USDT)は1ドルに連動したステーブルコインです。CoinBypass(コインチャージ所)で日本円から
                 USDTをチャージしておけば、決済がブロックされた海外サービスもコインで迂回決済できます。
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function UsdtChargeGuidePage() {
                 },
                 {
                   step: "2",
-                  title: "コインジャン(チャージ所)の選択",
+                  title: "CoinBypass(チャージ所)の選択",
                   desc: "日本円からUSDTをチャージしてくれるコインチャージ所を決めます。",
                   details: [
                     "テレグラムチャンネル・Webベースのチャージ業者が多数存在",

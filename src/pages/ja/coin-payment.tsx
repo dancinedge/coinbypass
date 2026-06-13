@@ -9,9 +9,9 @@ export default function CoinPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="コインジャン コイン決済方法 2025 - USDTで決済する方法 | CoinBypass"
-        description="コインジャン（コインチャージステーション）USDTコイン決済の完全ガイド。コインジャンでチャージしたUSDTでウォレットアドレス・QRの入力からネットワーク選択、決済確認まで安全に決済する実践的な方法をまとめました。"
-        keywords="コインジャン, コイン決済, USDT決済, コイン決済方法, コインチャージステーション, 暗号資産決済, テザー決済, コインで決済する方法"
+        title="CoinBypass コイン決済方法 2025 - USDTで決済する方法 | CoinBypass"
+        description="CoinBypass（コインチャージステーション）USDTコイン決済の完全ガイド。CoinBypassでチャージしたUSDTでウォレットアドレス・QRの入力からネットワーク選択、決済確認まで安全に決済する実践的な方法をまとめました。"
+        keywords="CoinBypass, コイン決済, USDT決済, コイン決済方法, コインチャージステーション, 暗号資産決済, テザー決済, コインで決済する方法"
         canonical={`${site.domain}/ja/coin-payment`}
       />
       <CoinBypassLayout currentPath="/ja/coin-payment">
@@ -26,7 +26,7 @@ export default function CoinPaymentPage() {
                 <span className="text-coinbypass-primary">コイン決済</span>の方法
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                コインジャンでチャージしたUSDTで決済するのは、思ったより簡単です。加盟店が案内した
+                CoinBypassでチャージしたUSDTで決済するのは、思ったより簡単です。加盟店が案内した
                 ウォレットアドレスに指定された数量を送れば決済が完了します。重要なのはネットワークとアドレスの確認です。
               </p>
             </div>

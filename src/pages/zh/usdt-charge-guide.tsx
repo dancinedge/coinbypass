@@ -9,9 +9,9 @@ export default function UsdtChargeGuidePage() {
     <>
       <Head
         siteId="coinbypass"
-        title="USDT充值指南 2025 - 在币场充值泰达币的方法 | CoinBypass"
-        description="USDT（泰达币）充值完整指南。整理了币场使用方法、TRC20网络选择、钱包地址确认、充值手续费与汇率等分步说明。"
-        keywords="USDT充值, 泰达币充值, 币场, 代币充值站, USDT充值方法, TRC20充值, 代币充值指南"
+        title="USDT充值指南 2025 - 在CoinBypass充值泰达币的方法 | CoinBypass"
+        description="USDT（泰达币）充值完整指南。整理了CoinBypass使用方法、TRC20网络选择、钱包地址确认、充值手续费与汇率等分步说明。"
+        keywords="USDT充值, 泰达币充值, CoinBypass, 代币充值站, USDT充值方法, TRC20充值, 代币充值指南"
         canonical={`${site.domain}/zh/usdt-charge-guide`}
       />
       <CoinBypassLayout currentPath="/zh/usdt-charge-guide">
@@ -20,13 +20,13 @@ export default function UsdtChargeGuidePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                💰 币场 USDT 充值
+                💰 CoinBypass USDT 充值
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-coinbypass-primary">USDT 充值</span>指南
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                泰达币（USDT）是与1美元挂钩的稳定币。在币场（代币充值站）用法币充值好
+                泰达币（USDT）是与1美元挂钩的稳定币。在CoinBypass（代币充值站）用法币充值好
                 USDT 后，即使是支付受限的海外服务，也可以用代币进行绕道支付。
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function UsdtChargeGuidePage() {
                 },
                 {
                   step: "2",
-                  title: "选择币场（充值站）",
+                  title: "选择CoinBypass（充值站）",
                   desc: "确定一家用法币为你充值 USDT 的代币充值站。",
                   details: [
                     "Telegram 频道、网页版充值商家众多",

@@ -9,9 +9,9 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title={`币场 CoinBypass | USDT 充值·加密货币支付·支付绕过指南 ${new Date().getFullYear()}`}
-        description="卡支付被拒？在币场充值 USDT，用加密货币绕过支付限制。USDT 充值、加密货币支付与支付绕过完整指南。"
-        keywords="USDT充值,加密货币支付,支付绕过,币场,CoinBypass,TRC20,泰达币,稳定币支付,海外服务支付"
+        title={`CoinBypass CoinBypass | USDT 充值·加密货币支付·支付绕过指南 ${new Date().getFullYear()}`}
+        description="卡支付被拒？在CoinBypass充值 USDT，用加密货币绕过支付限制。USDT 充值、加密货币支付与支付绕过完整指南。"
+        keywords="USDT充值,加密货币支付,支付绕过,CoinBypass,CoinBypass,TRC20,泰达币,稳定币支付,海外服务支付"
         canonical={`${site.domain}/zh`}
       />
       <CoinBypassLayout currentPath="/zh">
@@ -32,7 +32,7 @@ export default function CoinBypassHome() {
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  币场 — 不受支付限制的
+                  CoinBypass — 不受支付限制的
                 </span>
                 <br />
                 <span className="text-white">USDT 加密货币支付</span>
@@ -41,7 +41,7 @@ export default function CoinBypassHome() {
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
                 卡支付被封锁的服务？
                 <br className="hidden md:block" />
-                在币场充值 USDT，用加密货币绕过支付限制。
+                在CoinBypass充值 USDT，用加密货币绕过支付限制。
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -165,7 +165,7 @@ export default function CoinBypassHome() {
                 {
                   icon: "💰",
                   title: "USDT 充值指南",
-                  desc: "在币场充值 USDT 的分步方法与注意事项",
+                  desc: "在CoinBypass充值 USDT 的分步方法与注意事项",
                   href: "/usdt-charge-guide",
                   color: "from-amber-500 to-yellow-600",
                 },
@@ -205,13 +205,13 @@ export default function CoinBypassHome() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 币场合作伙伴 — 充值站创业
+                🏪 CoinBypass合作伙伴 — 充值站创业
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                亲自运营<span className="text-coinbypass-primary">币场</span>充值站
+                亲自运营<span className="text-coinbypass-primary">CoinBypass</span>充值站
               </h2>
               <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                从币场租赁，开启属于自己的 USDT 充值站。基础设施·支付·结算均由币场提供。
+                从CoinBypass租赁，开启属于自己的 USDT 充值站。基础设施·支付·结算均由CoinBypass提供。
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -235,7 +235,7 @@ export default function CoinBypassHome() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
               >
-                币场加盟咨询 →
+                CoinBypass加盟咨询 →
               </a>
             </div>
           </div>
