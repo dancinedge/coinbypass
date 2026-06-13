@@ -9,9 +9,9 @@ export default function BypassPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="币场支付绕过 / 替代支付指南 2025 - 用加密货币绕过支付 | CoinBypass"
-        description="当银行卡·账户支付被拒时，如何在币场用加密货币（USDT）进行绕过支付。整理了需要绕过支付的场景、替代支付方式对比，以及币场使用安全须知。"
-        keywords="币场, 支付绕过, 绕过支付, 替代支付, 加密货币绕过支付, USDT 绕过, 支付被拒, 海外支付绕过"
+        title="CoinBypass支付绕过 / 替代支付指南 2025 - 用加密货币绕过支付 | CoinBypass"
+        description="当银行卡·账户支付被拒时，如何在CoinBypass用加密货币（USDT）进行绕过支付。整理了需要绕过支付的场景、替代支付方式对比，以及CoinBypass使用安全须知。"
+        keywords="CoinBypass, 支付绕过, 绕过支付, 替代支付, 加密货币绕过支付, USDT 绕过, 支付被拒, 海外支付绕过"
         canonical={`${site.domain}/zh/bypass-payment`}
       />
       <CoinBypassLayout currentPath="/zh/bypass-payment">
@@ -75,7 +75,7 @@ export default function BypassPaymentPage() {
                 {
                   step: "1",
                   title: "充值 USDT",
-                  desc: "在币场用人民币充值 USDT 并存入钱包。",
+                  desc: "在CoinBypass用人民币充值 USDT 并存入钱包。",
                   details: [
                     "推荐 TRC20 网络（便宜·快速）",
                     "充值金额按预计支付额 + 手续费余量准备",
@@ -194,7 +194,7 @@ export default function BypassPaymentPage() {
               请先充值 USDT
             </h2>
             <p className="text-coinbypass-muted-foreground mb-8 max-w-2xl mx-auto">
-              绕过支付的起点是充值 USDT。请逐步了解币场的使用方法。
+              绕过支付的起点是充值 USDT。请逐步了解CoinBypass的使用方法。
             </p>
             <a
               href="/zh/usdt-charge-guide"

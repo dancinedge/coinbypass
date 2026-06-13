@@ -10,8 +10,8 @@ export default function CoinPaymentPage() {
       <Head
         siteId="coinbypass"
         title="How to Pay with Coins 2025 - Paying with USDT | CoinBypass"
-        description="A complete guide to USDT coin payments on Coinjang (coin top-up station). We cover the practical steps for paying safely with the USDT you topped up on Coinjang, from entering the wallet address and QR code to selecting the network and confirming the payment."
-        keywords="Coinjang, coin payment, USDT payment, how to pay with coins, coin top-up station, crypto asset payment, Tether payment, how to make a coin payment"
+        description="A complete guide to USDT coin payments on CoinBypass (coin top-up station). We cover the practical steps for paying safely with the USDT you topped up on CoinBypass, from entering the wallet address and QR code to selecting the network and confirming the payment."
+        keywords="CoinBypass, coin payment, USDT payment, how to pay with coins, coin top-up station, crypto asset payment, Tether payment, how to make a coin payment"
         canonical={`${site.domain}/coin-payment`}
       />
       <CoinBypassLayout currentPath="/coin-payment">
@@ -26,7 +26,7 @@ export default function CoinPaymentPage() {
                 How to <span className="text-coinbypass-primary">Pay with Coins</span>
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
-                Paying with the USDT you topped up on Coinjang is simpler than you might think. Just send the
+                Paying with the USDT you topped up on CoinBypass is simpler than you might think. Just send the
                 specified amount to the wallet address provided by the merchant, and your payment is complete.
                 The key is verifying the network and the address.
               </p>

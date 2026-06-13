@@ -9,9 +9,9 @@ export default function UsdtChargeGuidePage() {
     <>
       <Head
         siteId="coinbypass"
-        title="USDT Charging Guide 2025 - How to Buy Tether on Coinjang | CoinBypass"
-        description="The complete guide to charging USDT (Tether). Step by step: how to use Coinjang, choosing the TRC20 network, verifying your wallet address, charging fees, and exchange rates."
-        keywords="USDT charging, buy Tether, Coinjang, coin charging service, how to buy USDT, TRC20 charging, coin charging guide"
+        title="USDT Charging Guide 2025 - How to Buy Tether on CoinBypass | CoinBypass"
+        description="The complete guide to charging USDT (Tether). Step by step: how to use CoinBypass, choosing the TRC20 network, verifying your wallet address, charging fees, and exchange rates."
+        keywords="USDT charging, buy Tether, CoinBypass, coin charging service, how to buy USDT, TRC20 charging, coin charging guide"
         canonical={`${site.domain}/usdt-charge-guide`}
       />
       <CoinBypassLayout currentPath="/usdt-charge-guide">
@@ -20,14 +20,14 @@ export default function UsdtChargeGuidePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                💰 Coinjang USDT Charging
+                💰 CoinBypass USDT Charging
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-coinbypass-primary">USDT Charging</span> Guide
               </h1>
               <p className="text-xl text-coinbypass-muted-foreground">
                 Tether (USDT) is a stablecoin pegged to the US dollar. By charging USDT with
-                Korean won on Coinjang (a coin charging service), you can pay around payment
+                Korean won on CoinBypass (a coin charging service), you can pay around payment
                 blocks on overseas services using coins.
               </p>
             </div>
@@ -77,7 +77,7 @@ export default function UsdtChargeGuidePage() {
                 },
                 {
                   step: "2",
-                  title: "Choose a Coinjang (charging service)",
+                  title: "Choose a CoinBypass (charging service)",
                   desc: "Pick a coin charging service that lets you buy USDT with Korean won.",
                   details: [
                     "Many Telegram-channel and web-based charging providers exist",

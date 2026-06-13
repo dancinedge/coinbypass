@@ -9,9 +9,9 @@ export default function CoinBypassHome() {
     <>
       <Head
         siteId="coinbypass"
-        title="CoinBypass — USDT Coin Payment Without Limits | Coinjang Charging Guide"
-        description="Card payment blocked? Charge USDT at Coinjang (coin charging station) and bypass payment limits with crypto. Step-by-step USDT charging and coin payment guides."
-        keywords="CoinBypass, Coinjang, USDT charge, coin payment, bypass payment, USDT, TRC20, stablecoin, crypto payment, alternative payment"
+        title="CoinBypass — USDT Coin Payment Without Limits | CoinBypass Charging Guide"
+        description="Card payment blocked? Charge USDT at CoinBypass (coin charging station) and bypass payment limits with crypto. Step-by-step USDT charging and coin payment guides."
+        keywords="CoinBypass, USDT charge, coin payment, bypass payment, USDT, TRC20, stablecoin, crypto payment, alternative payment"
         canonical={site.domain}
       />
       <CoinBypassLayout currentPath="/">
@@ -32,7 +32,7 @@ export default function CoinBypassHome() {
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-coinbypass-primary via-coinbypass-secondary to-coinbypass-primary bg-clip-text text-transparent">
-                  Coinjang — Payment Without Limits
+                  CoinBypass — Payment Without Limits
                 </span>
                 <br />
                 <span className="text-white">USDT Coin Payment</span>
@@ -41,7 +41,7 @@ export default function CoinBypassHome() {
               <p className="text-xl text-coinbypass-muted-foreground max-w-3xl mx-auto mb-10">
                 A service that won't accept your card?
                 <br className="hidden md:block" />
-                Charge USDT at Coinjang and bypass the limits by paying with crypto.
+                Charge USDT at CoinBypass and bypass the limits by paying with crypto.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -165,7 +165,7 @@ export default function CoinBypassHome() {
                 {
                   icon: "💰",
                   title: "USDT Charging Guide",
-                  desc: "Step-by-step instructions and precautions for charging USDT at Coinjang",
+                  desc: "Step-by-step instructions and precautions for charging USDT at CoinBypass",
                   href: "/usdt-charge-guide",
                   color: "from-amber-500 to-yellow-600",
                 },
@@ -200,18 +200,18 @@ export default function CoinBypassHome() {
           </div>
         </section>
 
-        {/* Partners — Coinjang charging station franchise/rental (B2B dual landing) */}
+        {/* Partners — CoinBypass charging station franchise/rental (B2B dual landing) */}
         <section className="py-20 bg-gradient-to-b from-coinbypass-background to-coinbypass-card">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-sm mb-6">
-                🏪 Coinjang Partners — Launch a Charging Station
+                🏪 CoinBypass Partners — Launch a Charging Station
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Run your own <span className="text-coinbypass-primary">Coinjang</span> charging station
+                Run your own <span className="text-coinbypass-primary">CoinBypass</span> charging station
               </h2>
               <p className="text-xl text-coinbypass-muted-foreground max-w-2xl mx-auto">
-                Start your own USDT charging station by leasing it from Coinjang. Coinjang provides the infrastructure, payments, and settlement.
+                Start your own USDT charging station by leasing it from CoinBypass. CoinBypass provides the infrastructure, payments, and settlement.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -235,7 +235,7 @@ export default function CoinBypassHome() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-coinbypass-primary text-black font-semibold hover:opacity-90 transition-opacity"
               >
-                Coinjang Franchise Inquiry →
+                CoinBypass Franchise Inquiry →
               </a>
             </div>
           </div>

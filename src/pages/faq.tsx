@@ -10,11 +10,11 @@ const FAQ_SECTIONS = [
     items: [
       {
         q: "What is USDT (Tether)?",
-        a: "USDT is a stablecoin pegged to the value of one US dollar. Unlike Bitcoin or Ethereum, its price barely fluctuates, making it well suited for payments and transfers. At a Coinjang (coin top-up service), you can top up USDT with Korean won and use it for payments.",
+        a: "USDT is a stablecoin pegged to the value of one US dollar. Unlike Bitcoin or Ethereum, its price barely fluctuates, making it well suited for payments and transfers. At a CoinBypass (coin top-up service), you can top up USDT with Korean won and use it for payments.",
       },
       {
-        q: "What is a Coinjang (coin top-up service)?",
-        a: "A service that lets you top up crypto assets such as USDT using Korean won is commonly called a Coinjang or coin top-up service. Once you deposit, it sends USDT to the wallet address you specify. It is safest to use providers that transparently disclose their rates and fees.",
+        q: "What is a CoinBypass (coin top-up service)?",
+        a: "A service that lets you top up crypto assets such as USDT using Korean won is commonly called a CoinBypass or coin top-up service. Once you deposit, it sends USDT to the wallet address you specify. It is safest to use providers that transparently disclose their rates and fees.",
       },
       {
         q: "Which network should I choose when topping up?",
@@ -89,8 +89,8 @@ export default function FAQPage() {
       <Head
         siteId="coinbypass"
         title="Frequently Asked Questions (FAQ) - CoinBypass"
-        description="FAQs about USDT top-up, coin payments, and payment bypass. How to use a Coinjang, choosing a network, and safety guidelines."
-        keywords="USDT top-up FAQ, coin payment questions, Coinjang questions, payment bypass questions, Tether top-up FAQ"
+        description="FAQs about USDT top-up, coin payments, and payment bypass. How to use a CoinBypass, choosing a network, and safety guidelines."
+        keywords="USDT top-up FAQ, coin payment questions, CoinBypass questions, payment bypass questions, Tether top-up FAQ"
         canonical={`${site.domain}/faq`}
       />
       <CoinBypassLayout currentPath="/faq">

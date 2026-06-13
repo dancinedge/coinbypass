@@ -9,9 +9,9 @@ export default function BypassPaymentPage() {
     <>
       <Head
         siteId="coinbypass"
-        title="コインジャン決済バイパス / 代替決済ガイド 2025 - コインで迂回決済 | CoinBypass"
-        description="カード・口座決済がブロックされたとき、コインジャンでコイン（USDT）を使って迂回する方法。決済バイパスが必要な状況、代替決済手段の比較、コインジャン利用の安全心得をまとめました。"
-        keywords="コインジャン, 決済バイパス, 迂回決済, 代替決済, コイン迂回決済, USDT迂回, 決済ブロック, 海外決済バイパス"
+        title="CoinBypass決済バイパス / 代替決済ガイド 2025 - コインで迂回決済 | CoinBypass"
+        description="カード・口座決済がブロックされたとき、CoinBypassでコイン（USDT）を使って迂回する方法。決済バイパスが必要な状況、代替決済手段の比較、CoinBypass利用の安全心得をまとめました。"
+        keywords="CoinBypass, 決済バイパス, 迂回決済, 代替決済, コイン迂回決済, USDT迂回, 決済ブロック, 海外決済バイパス"
         canonical={`${site.domain}/ja/bypass-payment`}
       />
       <CoinBypassLayout currentPath="/ja/bypass-payment">
@@ -75,7 +75,7 @@ export default function BypassPaymentPage() {
                 {
                   step: "1",
                   title: "USDTチャージ",
-                  desc: "コインジャンでウォン建てでUSDTをチャージし、ウォレットに保管します。",
+                  desc: "CoinBypassでウォン建てでUSDTをチャージし、ウォレットに保管します。",
                   details: [
                     "TRC20ネットワーク推奨（安価・高速）",
                     "決済予定金額＋手数料の余裕分をチャージ",
@@ -194,7 +194,7 @@ export default function BypassPaymentPage() {
               まずはUSDTをチャージしましょう
             </h2>
             <p className="text-coinbypass-muted-foreground mb-8 max-w-2xl mx-auto">
-              迂回決済の出発点はUSDTチャージです。コインジャンの利用方法をステップごとに確認しましょう。
+              迂回決済の出発点はUSDTチャージです。CoinBypassの利用方法をステップごとに確認しましょう。
             </p>
             <a
               href="/ja/usdt-charge-guide"
