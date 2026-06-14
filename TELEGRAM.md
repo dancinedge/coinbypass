@@ -1,3 +1,5 @@
+<!-- quickref → SSOT: see ARCHITECTURE.md (architecture single source of truth) -->
+
 # 텔레그램 홍보 문구
 
 ![홍보 배너 (16:9)](docs/promo-16x9.png)
